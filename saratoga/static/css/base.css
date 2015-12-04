@@ -1,0 +1,104 @@
+/* App custom css */
+
+.nopadding {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.booking{
+    background-image: url('../img/Home/Book-Now/background.png');
+}
+
+.facilities {
+    background-image: url('../img/Home/Facilities/background.png');
+}
+
+.history{
+    background-image: url('../img/Home/History/background.png');
+}
+
+.rooms{
+
+}
+
+.intro{
+    background-image: url('../img/Home/Hotel%20Saratoga%20Intro/background.png');
+}
+
+.page-header{
+    background-image: url('../img/Home/HeaderAndMessage/background.png');
+}
+
+.my-img-format {
+    /*background-image: url('../img/Home/Book-Now/background.png');*/
+    width: 100%;
+    background-size: 100% 100%;
+    float: left;
+    height: 600px;
+    background-repeat: no-repeat;
+}
+
+.light-upper-down-spacing{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*************** Menu Styles ***************/
+
+.separation{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+}
+
+#circle {
+    width: 5px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 25px;
+    background-color: #cbb56c;
+}
+/*nav a.active {
+    border-bottom: 5px solid white; /!* simulate increase in white color *!/
+}
+nav a:hover {
+    border-bottom-color: green; /!* change border-color to green on hover *!/
+}
+nav li {
+    border-bottom: 2px solid blue; /!* constant light blue border *!/
+}*/
+
+/*************** Footer Styles *************/
+.footer-color{
+    background-color: black;
+}
+
+.center-middle{
+    margin: 0 auto;
+    width: 200px;
+}
+
+.cubaism{
+    margin-top: 25px;
+    width: 150px;
+    height: 60px;
+}
+
+.logo{
+    margin-top: 15px;
+    margin-left: 5px;
+    width: 140px;
+    height: 25px;
+    margin-bottom: 5px;
+}
+
+#copyright{
+    color: #9b9b9b;
+    width: 380px;
+    margin-bottom: 25px;
+}
+/********************************************/
