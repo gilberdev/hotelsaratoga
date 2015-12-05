@@ -1,4 +1,16 @@
-/* App custom css */
+/* Generic styles */
+
+.to-right{
+    float: right;
+}
+
+.to-left{
+    float: left;
+}
+
+.black{
+    background-color: black;
+}
 
 .nopadding {
     padding-right: 0px;
@@ -25,10 +37,6 @@
     background-image: url('../img/Home/Hotel%20Saratoga%20Intro/background.png');
 }
 
-.page-header{
-    background-image: url('../img/Home/HeaderAndMessage/background.png'), linear-gradient(#fdf8ff, #060303);
-}
-
 .my-img-format {
     /*background-image: url('../img/Home/Book-Now/background.png');*/
     width: 100%;
@@ -44,7 +52,6 @@
 }
 
 /*************** Menu Styles ***************/
-
 .separation{
     margin-top: 20px;
     margin-bottom: 20px;
@@ -63,6 +70,8 @@ nav ul {
     background-color: #cbb56c;
 }
 
+/*******************************************/
+
 
 /********* Header and Message Styles *******/
 .parent {
@@ -70,12 +79,36 @@ nav ul {
   flex-direction: column;
   justify-content: center;
 }
+
+.page-header{
+    background-image: url('../img/Home/HeaderAndMessage/background.png'), linear-gradient(#fdf8ff, #060303);
+}
+
+.hotel-name{
+    color: #ffffff;
+    font-size: large;
+    text-transform: uppercase;
+    /*text-decoration: underline;*/
+    border-bottom-style: solid;
+    border-bottom-color: #ffffff;
+}
+
+.hotel-logo{
+    color: #ffffff;
+    text-transform: lowercase;
+}
+
 /*******************************************/
 
-/*************** Footer Styles *************/
-.footer-color{
-    background-color: black;
+
+/****************** News *******************/
+.news{
+    background-image: url('../img/Home/News/Texture%20Background.png'), linear-gradient(#fdf8ff, #060303);
 }
+/*******************************************/
+
+
+/*************** Footer Styles *************/
 
 .center-middle{
     margin: 0 auto;
