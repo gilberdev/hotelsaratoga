@@ -26,7 +26,7 @@
 }
 
 .page-header{
-    background-image: url('../img/Home/HeaderAndMessage/background.png');
+    background-image: url('../img/Home/HeaderAndMessage/background.png'), linear-gradient(#fdf8ff, #060303);
 }
 
 .my-img-format {
@@ -62,15 +62,15 @@ nav ul {
     border-radius: 25px;
     background-color: #cbb56c;
 }
-/*nav a.active {
-    border-bottom: 5px solid white; /!* simulate increase in white color *!/
+
+
+/********* Header and Message Styles *******/
+.parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-nav a:hover {
-    border-bottom-color: green; /!* change border-color to green on hover *!/
-}
-nav li {
-    border-bottom: 2px solid blue; /!* constant light blue border *!/
-}*/
+/*******************************************/
 
 /*************** Footer Styles *************/
 .footer-color{

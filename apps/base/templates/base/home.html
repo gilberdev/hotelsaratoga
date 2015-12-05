@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <p>Welcome, start editing this template in <code>apps/base/templates/base/home.html</code></p>
 
-    <div class="container-fluid my-img-format page-header">
-
+    <div class="container-fluid my-img-format page-header parent">
+        <div class="row">
+            <p class="text-center">
+                HOTEL SARATOGA HABANA
+            </p>
+        </div>
+        <div class="row">
+            <img src="{{ STATIC_URL }}img/Home/HeaderAndMessage/Gold%20Ornament1.png"></img>
+            <p class="text-center">a rich and colorfull heritage close to the delights of old havana</p>
+            <img src="{{ STATIC_URL }}img/Home/HeaderAndMessage/Gold%20Ornament1.png"></img>
+        </div>
     </div>
 
     <div class="container-fluid intro my-img-format">
