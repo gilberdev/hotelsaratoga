@@ -50,7 +50,7 @@
         <div class="row my-img-format intro">
 
         </div>
-        <div class="row" id="capa1">
+        <div class="row" id="two-columns">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
             <p>Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus. Ut velit nibh, convallis at odio non, sodales euismod sapien. Morbi at libero ut nisi feugiat fringilla. Sed tincidunt urna at dolor lobortis, eu sodales lacus imperdiet. Phasellus vel aliquet metus. Ut ut felis sapien.</p>
             <p>Curabitur sodales molestie odio, non tristique diam mattis ut. Integer et erat orci. Maecenas placerat tortor a dolor rutrum, quis laoreet neque accumsan. Vestibulum fringilla, turpis id rhoncus placerat, ligula eros aliquet ex, vitae egestas diam arcu in libero. Donec ac urna placerat, consectetur leo vel, venenatis nisi. Integer malesuada quam nisi, sit amet consectetur urna blandit non. Etiam tincidunt tempus sapien pellentesque sodales. Fusce finibus risus odio, in efficitur eros suscipit sit amet. Curabitur ut massa suscipit, consectetur lacus eleifend, condimentum tellus. Sed quis lacus id odio pharetra egestas. Phasellus sagittis ullamcorper luctus.</p>
@@ -62,7 +62,7 @@
     </div>
 
     <div class="row my-img-format gallery">
-        
+
     </div>
 
     <div class="row news">
@@ -79,23 +79,35 @@
         </div>
     </div>
 
+    <div class="row history my-img-format" style="height: 1000px; padding-top: 20px;">
+        <div style="float: right; border-right-style: solid; border-right-color: black; width: 30%; margin-right: 10%; padding-right: 10px;">
+            <p style="text-align: right; color: white; text-transform: uppercase;">history</p>
+            <p style="text-align: right;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
+            <br>
+            <p class="text-right">read more</p>
+        </div>
+    </div>
+
+    <div class="row my-img-format">
+        <div class="col-sm-7" style="background-color: black; height: inherit;">
+            <p>Aqui estoy</p>
+        </div>
+        <div class="col-sm-5 rooms" style="height: inherit">
+            <p>En la otra columna yo</p>
+        </div>
+    </div>
+
     <div class="container-fluid facilities my-img-format">
 
     </div>
 
-    <div class="container-fluid history my-img-format">
-
-    </div>
-
-    <div class="container-fluid rooms my-img-format">
-
-    </div>
-
-    <div class="container-fluid facilities my-img-format">
-
-    </div>
-
-    <div class="container-fluid booking my-img-format">
-
+    <div class="row booking my-img-format" style="margin: 0 auto;">
+        <p class="text-center" style="text-transform: uppercase;">
+            <img src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament1.png">
+            online reservation
+            <img src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament2.png">
+        </p>
+        <p class="text-center">If you like this hotel you can make an online reservation in Cubaism.com <br> for more info make a reservation: </p>
+        <a href="#" style="background: none; border: solid; border-color: white; color: white; text-transform: uppercase;"> book now</a>
     </div>
 {% endblock %}

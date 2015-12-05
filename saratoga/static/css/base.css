@@ -40,12 +40,10 @@
     background-image: url('../img/Home/Facilities/background.png');
 }
 
-.history{
-    background-image: url('../img/Home/History/background.png');
-}
+
 
 .rooms{
-
+    background-image: url('../img/Home/Rooms/Capitol%20View%20Image.png');
 }
 
 .intro{
@@ -125,24 +123,37 @@ nav ul {
     background-image: url('../img/Home/Hotel%20Saratoga%20Intro/Gallery%20Layout.png'), linear-gradient(#fdf8ff, #060303);
 }
 
-#capa1 { padding-top: 30px;
-         padding-bottom: 30px;
-         padding-left: 20%;
-         padding-right: 20%;
-         /*column-width: 50%;*/
-         column-count: 2;
-         -moz-column-count: 2;
-         -webkit-column-count: 2;
+#two-columns{ padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 20%;
+            padding-right: 20%;
+            column-count: 2;
+            -moz-column-count: 2;
+            -webkit-column-count: 2;
 }
 
 /*******************************************/
 
 
-
 /****************** News *******************/
 .news{
-    background-image: url('../img/Home/News/Texture%20Background.png'), linear-gradient(#fdf8ff, #060303);
+    background-image: url('../img/Home/News/Texture%20Background.png');
 }
+/*******************************************/
+
+
+/**************** History ******************/
+.history{
+    /*height: 1000px*/
+    background-image: url('../img/Home/History/background.png');
+}
+
+
+/*******************************************/
+
+
+/******************* Rooms *****************/
+
 /*******************************************/
 
 
