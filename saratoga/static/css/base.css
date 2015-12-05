@@ -1,5 +1,20 @@
 /* Generic styles */
 
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
+}
+
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
 .to-right{
     float: right;
 }
