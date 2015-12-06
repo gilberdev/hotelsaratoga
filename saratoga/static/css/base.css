@@ -32,22 +32,9 @@
     padding-left: 0px;
 }
 
-.booking{
-    background-image: url('../img/Home/Book-Now/background.png');
-}
 
 .facilities {
     background-image: url('../img/Home/Facilities/background.png');
-}
-
-
-
-.rooms{
-    background-image: url('../img/Home/Rooms/Capitol%20View%20Image.png');
-}
-
-.intro{
-    background-image: url('../img/Home/Hotel%20Saratoga%20Intro/background.png');
 }
 
 .my-img-format {
@@ -55,7 +42,6 @@
     width: 100%;
     background-size: 100% 100%;
     float: left;
-    height: 600px;
     background-repeat: no-repeat;
 }
 
@@ -95,6 +81,7 @@ nav ul {
 
 .page-header{
     background-image: url('../img/Home/HeaderAndMessage/background.png'), linear-gradient(#fdf8ff, #060303);
+    height: 600px;
 }
 
 .hotel-name{
@@ -117,10 +104,12 @@ nav ul {
 /****************** Intro ******************/
 .intro{
     background-image: url('../img/Home/Hotel%20Saratoga%20Intro/background.png'), linear-gradient(#fdf8ff, #060303);
+    height: 400px;
 }
 
 .gallery{
     background-image: url('../img/Home/Hotel%20Saratoga%20Intro/Gallery%20Layout.png'), linear-gradient(#fdf8ff, #060303);
+    height: 600px;
 }
 
 #two-columns{ padding-top: 30px;
@@ -148,13 +137,39 @@ nav ul {
     background-image: url('../img/Home/History/background.png');
 }
 
-
 /*******************************************/
 
 
 /******************* Rooms *****************/
+.rooms{
+    background-image: url('../img/Home/Rooms/Capitol%20View%20Image.png');
+    height: 600px;
+}
 
 /*******************************************/
+
+
+/****** Hotel Facilities & Reviews *********/
+
+/*******************************************/
+
+
+/******************* Book Now **************/
+.booking{
+    background-image: url('../img/Home/Book-Now/background.png');
+}
+/*
+.center-table {
+  display: table;
+  height: inherit;
+}
+.cell {
+  display: table-cell;
+  vertical-align: middle;
+}*/
+
+/*******************************************/
+
 
 
 /*************** Footer Styles *************/
