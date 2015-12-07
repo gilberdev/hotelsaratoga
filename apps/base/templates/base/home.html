@@ -70,19 +70,27 @@
 
     {# News #}
     <div class="row news">
-        <div class="row center-middle">
-            <p>
+        <div class="center-middle">
+            <p class="text-center">
                 <span class="hotel-name" style="color: black;">news</span>
             </p>
         </div>
-        <div class="row news">
-
+        <div class="row news" style="margin-left: 10%; margin-right: 10%;">
+            <div class="col-sm-6" style="background-color: white; margin-right:5px;">
+                <div class="row" style="height: 200px; background-image: url('{{ STATIC_URL }}img/Home/News/image1.png');"></div>
+            </div>
+            <div class="col-sm-6" style="margin-left:5px; background-color: white;">
+                <div class="row"></div>
+            </div>
         </div>
         <div class="row">
             <p class="text-right text-capitalize"> previous news <img src="{{ STATIC_URL }}img/Home/News/Disclosure.png"></p>
         </div>
     </div>
 
+
+
+    {# History #}
     <div class="row history my-img-format" style="height: 1000px; padding-top: 20px;">
         <div style="float: right; border-right-style: solid; border-right-color: black; width: 30%; margin-right: 10%; padding-right: 10px;">
             <p style="text-align: right; color: white; text-transform: uppercase;">history</p>
@@ -92,10 +100,20 @@
         </div>
     </div>
 
+
     {# Rooms #}
     <div class="row" style="background-color: black;">
         <div class="col-sm-7">
-            <p>Aqui estoy</p>
+            <div class="row" id="two-columns-rooms" style="color: white;">
+                <p><img src="{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png"></p>
+                <p style="text-transform: uppercase; font-size: 30px; text-align: center;">rooms</p>
+                <p><img src="{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png"></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
+                <p>Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus. Ut velit nibh, convallis at odio non, sodales euismod sapien. Morbi at libero ut nisi feugiat fringilla. Sed tincidunt urna at dolor lobortis, eu sodales lacus imperdiet. Phasellus vel aliquet metus. Ut ut felis sapien.</p>
+            </div>
+            <div class="row">
+                <p style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus.</p>
+            </div>
         </div>
         <div class="col-sm-5 rooms">
             <p>En la otra columna yo</p>
@@ -139,34 +157,36 @@
                 <h3 style="color: #d3bc78; margin: 0;">
                     General Facilities
                 </h3>
-                <ul style="color: black;">
-                    <li>Accesible in seat of wheels</li>
-                    <li>Internet Access</li>
-                    <li>Air conditioning in Restaurant</li>
-                    <li>Air conditioning in common areas</li>
-                    <li>Elevators</li>
-                    <li>Box of security</li>
-                    <li>Money exchange</li>
-                    <li>Hall Reception</li>
-                    <li>Living room of conferences</li>
-                    <li>Bussiness center</li>
-                    <li>Room service</li>
-                    <li>Buerau of Tourism</li>
-                    <li>Rent Car</li>
-                    <li>Taxi Services</li>
-                    <li>Laundry Services</li>
-                    <li>Reception service 24 hours</li>
-                    <li>Medical services(low petition)</li>
-                    <li>Rooms for handicapped persons</li>
-                    <li>Area for non smokers in restaurant</li>
-                    <li>Area for smokers in restaurant</li>
-                </ul>
+                <div id="two-columns-rooms" style="padding: 0;">
+                    <ul class="unstyled" style="color: black; list-style-type: none; padding-left: 0;">
+                        <li>Accesible in seat of wheels</li>
+                        <li>Internet Access</li>
+                        <li>Air conditioning in Restaurant</li>
+                        <li>Air conditioning in common areas</li>
+                        <li>Elevators</li>
+                        <li>Box of security</li>
+                        <li>Money exchange</li>
+                        <li>Hall Reception</li>
+                        <li>Living room of conferences</li>
+                        <li>Bussiness center</li>
+                        <li>Room service</li>
+                        <li>Buerau of Tourism</li>
+                        <li>Rent Car</li>
+                        <li>Taxi Services</li>
+                        <li>Laundry Services</li>
+                        <li>Reception service 24 hours</li>
+                        <li>Medical services(low petition)</li>
+                        <li>Rooms for handicapped persons</li>
+                        <li>Area for non smokers in restaurant</li>
+                        <li>Area for smokers in restaurant</li>
+                    </ul>
+                </div>
             </div>
             <div class="col-sm-5" style="border-left: solid; border-left-color: #d3bc78;">
                 <h3 style="color: #d3bc78; margin: 0;">
                     Sightseeing's in less than 1 km
                 </h3>
-                <ul style="color: black;">
+                <ul style="color: black; list-style-type: none; padding-left: 0;">
                     <li>Historic Centre</li>
                     <li>National Capitoly</li>
                     <li>National Museum of Fine Arts</li>
@@ -184,7 +204,7 @@
 
 
     {# Reviews #}
-    <div class="row">
+    <div class="row" style="background-color: #f8f8f8;">
         <p class="text-center">
             <img src="{{ STATIC_URL }}img/Home/Reviews/Golden Ornament.png">
         </p>
@@ -223,8 +243,8 @@
             </div>
             <div class="row spaced-row">
                 <div class="col-sm-2 big-circle" style="margin-bottom: 10px; color: #d3bc78;">
-                    <p style="text-align: center; margin-bottom: 0px; font-size: 40px;">5</p>
-                    <p style="text-align: center; margin-bottom: 0px; font-size: 20px;">of 10</p>
+                    <p style="text-align: center; margin-bottom: 0px; font-size: 55px;">5</p>
+                    <p style="text-align: center; margin-bottom: 0px; font-size: 20px; margin-top: -17px;">of 10</p>
                 </div>
                 <div class="col-sm-10">
                     <div class="row">
@@ -246,8 +266,8 @@
             </div>
             <div class="row spaced-row">
                 <div class="col-sm-2 big-circle" style="margin-bottom: 10px; color: #d3bc78;">
-                    <p style="text-align: center; margin-bottom: 0px; font-size: 40px;">5</p>
-                    <p style="text-align: center; margin-bottom: 0px; font-size: 20px;">of 10</p>
+                    <p style="text-align: center; margin-bottom: 0px; font-size: 55px;">5</p>
+                    <p style="text-align: center; margin-bottom: 0px; font-size: 20px; margin-top: -17px;">of 10</p>
                 </div>
                 <div class="col-sm-10">
                     <div class="row">

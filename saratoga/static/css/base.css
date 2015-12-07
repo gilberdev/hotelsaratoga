@@ -147,6 +147,16 @@ nav ul {
     height: 600px;
 }
 
+
+#two-columns-rooms{ padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 10%;
+            padding-right: 10%;
+            column-count: 2;
+            -moz-column-count: 2;
+            -webkit-column-count: 2;
+}
+
 /*******************************************/
 
 
