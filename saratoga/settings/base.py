@@ -168,3 +168,6 @@ LOGGING = {
         }
     }
 }
+
+# CHARSET
+FILE_CHARSET = 'utf-8'
