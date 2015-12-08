@@ -69,26 +69,32 @@
     </div>
 
     {# News #}
-    <div class="row news">
-        <div class="center-middle">
-            <p class="text-center">
-                <span class="hotel-name" style="color: black;">news</span>
-            </p>
-        </div>
-        <div class="row news" style="margin-left: 10%; margin-right: 10%;">
-            <div class="col-sm-6" style="background-color: white; margin-right:5px;">
-                <div class="row" style="height: 200px; background-image: url('{{ STATIC_URL }}img/Home/News/image1.png');"></div>
+    <div class="news">
+        <div style="margin-left: 7%; margin-right: 7%;">
+            <div class="row" style="margin-top: 20px;">
+                <div class="center-middle">
+                    <p class="text-center">
+                        <span class="hotel-name" style="color: black;">news</span>
+                    </p>
+                </div>
             </div>
-            <div class="col-sm-6" style="margin-left:5px; background-color: white;">
-                <div class="row"></div>
+            <div class="row">
+                <div class="col-sm-6" style="padding-right: 10px;">
+                    <div  style="background-color: white; height: 100px;">
+
+                    </div>
+                </div>
+                <div class="col-sm-6" style="padding-left: 10px;">
+                    <div  style="background-color: white; height: 100px;">
+
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <p class="text-right text-capitalize"> previous news <img src="{{ STATIC_URL }}img/Home/News/Disclosure.png"></p>
+            <div class="row" style="padding: 15px;">
+                <p class="text-right text-capitalize"> previous news <img src="{{ STATIC_URL }}img/Home/News/Disclosure.png"></p>
+            </div>
         </div>
     </div>
-
-
 
     {# History #}
     <div class="row history my-img-format" style="height: 1000px; padding-top: 20px;">
@@ -337,7 +343,7 @@
         </div>
 
         </div>
-    </div>
+
 
 
 {% endblock %}
