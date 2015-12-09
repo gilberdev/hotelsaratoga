@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {# Hotels #}
+     <div style="margin-left: 7%; margin-right: 7%; margin-top: 50px; background-color: #f8f8f8">
+        <div class="row">
+            <p class="text-center" style="color: black;
+                             font-size: 35px;
+                             text-transform: uppercase;">
+                <img src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament.png">
+                <span style="border-bottom-style: solid;
+                             border-top-style: solid;
+                             border-bottom-color: #d3bc78;
+                             border-top-color: #d3bc78;">
+                    other hotels
+                </span>
+                <img src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament2.png">
+            </p>
+        </div>
+        <div class="row">
+            <p class="text-center" style="text-decoration: line-through;">
+                <img style="text-decoration: none;" src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament3.png">
+            </p>
+        </div>
+
+         <div class="row">
+             <div class="col-sm-4" style="background-color: white;">
+                 <div style="background-image: url('{{ STATIC_URL }}img/other hotels/list image.png'); background-size: cover; height: 350px">
+
+                 </div>
+{#                 <img src="{{ STATIC_URL }}img/other hotels/list image.png">#}
+             </div>
+             <div class="col-sm-8">
+                <p>Hotel Nacional de Cuba</p>
+                <p>Vedado, La Habana</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. </p>
+             </div>
+         </div>
+
+        <div class="row">
+            <p class="text-center" style="text-decoration: line-through;">
+                <img style="text-decoration: none;" src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament3.png">
+            </p>
+        </div>
+     </div>
+
+    {# Book #}
+    <div class="booking my-img-format" style="color: white;">
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-sm-12">
+                <p class="text-center" style="margin-top: 25px;"><img src="{{ STATIC_URL }}img/Home/Book-Now/Saratoga Logo.png"></p>
+            </div>
+        </div>
+
+        <div class="col-sm-12">
+            <p class="text-center">You can make an online reservation in Cubaism.com <br> for more info or make a reservation: </p>
+            <p class="text-center"><a href="#" style="background: none; border: solid; border-color: white; color: white; text-transform: uppercase;"> book now</a></p>
+        </div>
+    </div>
+
+{% endblock %}
