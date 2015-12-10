@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "TimesNewRomanPSMT";
+    src: url('../fonts/Times%20New%20Roman%20MT%20Std/TimesNewRomanMTStd.otf');
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url('../fonts/open-sans/OpenSans-Regular.ttf');
+}
