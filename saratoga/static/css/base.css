@@ -308,8 +308,19 @@ nav ul {
 }
 
 .upper-more-spaced-row{
-    margin-top: 30px;
+    margin-top: 55px;
     margin-bottom: 20px;
+}
+
+.confort-button{
+    background: none;
+    border: solid;
+    border-width: 1px;
+    border-color: #d3bc78;
+    color: black;
+    padding: 5px 15px 5px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 /*******************************************/

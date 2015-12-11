@@ -176,7 +176,7 @@
 
     {# Rooms #}
 
-    <div class="table" style="background-color: black;">
+    <div class="table" style="background-color: black;margin-bottom: 0">
         <div class="table-row">
             <div class="col">
                 <div class="row" id="two-columns-rooms" style="color: white;">
@@ -235,13 +235,15 @@
         </div>
     </div>
     <div style="background-color: #f8f8f8;">
-        <div class="row" style="margin-left: 15%; margin-right: 15%; padding-top: 10px">
-            <div class="col-sm-7" style="border-left: solid; border-left-color: #d3bc78;">
-                <h3 style="color: #d3bc78; margin: 0;">
+        <div class="row" style="margin-left: 10%; margin-right: 10%; padding-top: 30px">
+            <div class="col-sm-8" style="border-left: solid; border-left-color: #d3bc78;">
+                <h3 class="title" style="color: #d3bc78; margin: 0;">
                     General Facilities
                 </h3>
+                <br>
                 <div id="two-columns-rooms" style="padding: 0;">
                     <ul class="unstyled" style="color: black; list-style-type: none; padding-left: 0;">
+                        <b>
                         <li>Accesible in seat of wheels</li>
                         <li>Internet Access</li>
                         <li>Air conditioning in Restaurant</li>
@@ -262,14 +264,17 @@
                         <li>Rooms for handicapped persons</li>
                         <li>Area for non smokers in restaurant</li>
                         <li>Area for smokers in restaurant</li>
+                        </b>
                     </ul>
                 </div>
             </div>
-            <div class="col-sm-5" style="border-left: solid; border-left-color: #d3bc78;">
-                <h3 style="color: #d3bc78; margin: 0;">
+            <div class="col-sm-4" style="border-left: solid; border-left-color: #d3bc78;">
+                <h3 class="title" style="color: #d3bc78; margin: 0;">
                     Sightseeing's in less than 1 km
                 </h3>
+                <br>
                 <ul style="color: black; list-style-type: none; padding-left: 0;">
+                    <b>
                     <li>Historic Centre</li>
                     <li>National Capitoly</li>
                     <li>National Museum of Fine Arts</li>
@@ -280,6 +285,7 @@
                     <li>Havanas Malecon</li>
                     <li>Revolution Square</li>
                     <li>National Library</li>
+                    </b>
                 </ul>
             </div>
         </div>
@@ -288,7 +294,7 @@
 
     {# Reviews #}
     <div class="row" style="background-color: #f8f8f8;">
-        <p class="text-center">
+        <p class="text-center" style="margin-top: 35px;">
             <img src="{{ STATIC_URL }}img/Home/Reviews/Golden Ornament.png">
         </p>
     </div>
@@ -375,10 +381,10 @@
             </div>
             <div class="row upper-more-spaced-row">
                 <div class="col-sm-6">
-                    <a href="#" style="float: right; background: none; border: solid; border-color: #d3bc78; color: black; text-transform: uppercase;">write a review</a>
+                    <a href="#" class="confort-button" style="float: right;">write a review</a>
                 </div>
                 <div class="col-sm-6">
-                    <a href="#" style="float: left; background: none; border: solid; border-color: #d3bc78; color: black; text-transform: uppercase;">more reviews</a>
+                    <a href="#" class="confort-button" style="float: left;">more reviews</a>
                 </div>
             </div>
         </div>
@@ -389,32 +395,33 @@
     <div class="booking my-img-format" style="color: white;">
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-2">
-                <p class="text-left"><img class="" src="{{ STATIC_URL }}img/Home/Book-Now/Gold Corner Ornament1.png"></p>
+                <p class="text-left"><img class="" src="{{ STATIC_URL }}img/Home/Book-Now/Gold Corner Ornament1.png" style="width: 90px; width: 70px;"></p>
             </div>
             <div class="col-sm-8">
-                <p class="text-center" style="margin-top: 25px;"><img src="{{ STATIC_URL }}img/Home/Book-Now/Saratoga Logo.png"></p>
+                <p class="text-center" style="margin-top: 25px;"><img src="{{ STATIC_URL }}img/Home/Book-Now/Saratoga Logo.png" style="width: 200px; height: 150px;"></p>
             </div>
             <div class="col-sm-2">
-                  <p class="text-right"><img src="{{ STATIC_URL }}img/Home/Book-Now/Gold Corner Ornament3.png"></p>
+                  <p class="text-right"><img src="{{ STATIC_URL }}img/Home/Book-Now/Gold Corner Ornament3.png" style="width: 90px; width: 70px;"></p>
             </div>
         </div>
 
         <div class="col-sm-12">
-            <p class="text-center" style="text-transform: uppercase;">
-                <img src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament1.png">
+            <p class="text-center subtitle" style="text-transform: uppercase; color: white; font-size: 30px;">
+                <img src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament1.png" style="width: 60px; height: 20px;">
                 online reservation
-                <img src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament2.png">
+                <img src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament2.png" style="width: 60px; height: 20px;">
             </p>
-            <p class="text-center">If you like this hotel you can make an online reservation in Cubaism.com <br> for more info make a reservation: </p>
-            <p class="text-center"><a href="#" style="background: none; border: solid; border-color: white; color: white; text-transform: uppercase;"> book now</a></p>
+            <p class="text-center" style="font-size: 20px;"><b> If you like this hotel you can make an online reservation in Cubaism.com <br> for more info make a reservation: </b></p>
+            <p class="text-center" style="margin-top: 30px;"><a class="confort-button" href="#" style="background: none; border: solid;
+            border-color: white; color: white; text-transform: uppercase; border-width: 1px;"> book now</a></p>
         </div>
 
         <div class="row">
             <div class="col-sm-6">
-                <p class="text-left"><img src="{{ STATIC_URL }}img/Home/Book-Now/Gold Corner Ornament2.png"></p>
+                <p class="text-left"><img src="{{ STATIC_URL }}img/Home/Book-Now/Gold Corner Ornament2.png" style="width: 90px; width: 70px;"></p>
             </div>
             <div class="col-sm-6">
-                <p class="text-right"><img src="{{ STATIC_URL }}img/Home/Book-Now/Gold Corner Ornament4.png"></p>
+                <p class="text-right"><img src="{{ STATIC_URL }}img/Home/Book-Now/Gold Corner Ornament4.png" style="width: 90px; width: 70px;"></p>
             </div>
         </div>
 
