@@ -34,15 +34,16 @@ body{
 }
 
 .message{
-    color: #c0bebf;
+    color: #bfbfbf;
     font-size: 17px;
+    margin-bottom: 0;
 }
 
 .signature{
+    margin: 20px 0 0;
     font-family: 'Angelou';
-    color: #c0bebf;
+    color: #bfbfbf;
     font-size: 25px;
-    margin: 0;
 }
 
 
