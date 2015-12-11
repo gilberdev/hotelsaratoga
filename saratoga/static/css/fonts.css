@@ -7,3 +7,8 @@
     font-family: "Open Sans";
     src: url('../fonts/open-sans/OpenSans-Regular.ttf');
 }
+
+@font-face {
+    font-family: "Angelou";
+    src: url('../fonts/Angelou.otf');
+}

@@ -33,8 +33,16 @@ body{
     line-height: 59px
 }
 
-.text{
-    font-family: 'Open Sans';
+.message{
+    color: #c0bebf;
+    font-size: 17px;
+}
+
+.signature{
+    font-family: 'Angelou';
+    color: #c0bebf;
+    font-size: 25px;
+    margin: 0;
 }
 
 

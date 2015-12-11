@@ -3,33 +3,35 @@
 {% block content %}
 
     {# Header and Message #}
-    <div class="row">
-        <div class="row my-img-format page-header parent" style="border-bottom-width: 0;">
-            <div class="row">
-                <p class="text-center">
-                    <span class="hotel-name subtitle"> hotel saratoga habana </span>
-                </p>
-            </div>
-            <div class="row">
-                <p class="text-center hotel-logo">
-                    <img src="{{ STATIC_URL }}img/Home/HeaderAndMessage/Gold Ornament1.png">
-                    a rich and colorfull heritage close to the delights of old havana
-                    <img src="{{ STATIC_URL }}img/Home/HeaderAndMessage/Gold Ornament2.png">
-                </p>
-            </div>
+    <div class="row my-img-format page-header parent" style="border-bottom-width: 0;">
+        <div class="row">
+            <p class="text-center">
+                <span class="hotel-name subtitle"> hotel saratoga habana </span>
+            </p>
         </div>
-        <div class="row" style="background-color: black">
-            <div class="col-sm-4">
-                <img class="to-right" src="{{ STATIC_URL }}img/Home/HeaderAndMessage/nigelhuntPhoto.png">
-            </div>
-            <div class="col-sm-6">
-                <p class="text-left hotel-logo">
-                    Todos los procesos producen un valor de retorno que puede ser consultad
-                </p>
-                <p class="text-left hotel-logo">
-                    Nigel Alexander Hunt
-                </p>
-            </div>
+        <div class="row">
+            <p class="text-center hotel-logo">
+                <img src="{{ STATIC_URL }}img/Home/HeaderAndMessage/Gold Ornament1.png">
+                a rich and colorfull heritage close to the delights of old havana
+                <img src="{{ STATIC_URL }}img/Home/HeaderAndMessage/Gold Ornament2.png">
+            </p>
+        </div>
+    </div>
+
+    <div class="row" style="background-color: black;">
+        <div class="col-sm-3 text-center" style="margin-top: 20px;">
+            <img src="{{ STATIC_URL }}img/Home/HeaderAndMessage/nigelhuntPhoto.png">
+        </div>
+        <div class="col-sm-7" style="margin-top: 20px;">
+            <p class="text-left message">
+                Welcome to my site dedicated to the famous and hitorical Hotel Saratoga in Habana.  I am “poco a poco” researching and updating it with the aim to provide as complete as possible record of the hotels ancient and recent history; bearing in mind that the goings-on today may one day be of historical interest.
+            </p>
+            <p class="text-left message">
+                My site is NOT the official website of the current hotel operator, and by no means endorsed by them; but I am grateful for their help with the research and supplying some of the photographs. You can make from this room reservations through the Bizloco eTravel System operated by Cubaism Ltd which has a direct contact with the current hotel operator.
+            </p>
+            <p class="text-left signature">
+                Nigel Alexander Hunt
+            </p>
         </div>
     </div>
 
