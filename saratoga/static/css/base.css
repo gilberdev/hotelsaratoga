@@ -263,6 +263,21 @@ nav ul {
             -webkit-column-count: 2;
 }
 
+.table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 30px 0;
+}
+
+.table-row {
+    display: table-row
+}
+.col {
+    display: table-cell;
+    padding: 30px 0 30px 0;
+}
+
+
 /*******************************************/
 
 
