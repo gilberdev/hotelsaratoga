@@ -330,6 +330,11 @@ nav ul {
 .booking{
     background-image: url('../img/Home/Book-Now/background.png');
 }
+
+.booking-alternative{
+    background-image: url('../img/Home/Book-Now/Footer%20+%20Rectangle%2031%20Copy.png');
+    padding: 45px;
+}
 /*
 .center-table {
   display: table;

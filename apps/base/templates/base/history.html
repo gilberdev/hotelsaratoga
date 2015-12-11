@@ -3,26 +3,33 @@
 {% block content %}
 
     {# Book #}
-    <div class="booking my-img-format" style="color: white;">
+    <div class="booking-alternative my-img-format" style="color: white;">
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
-                <p class="text-center" style="margin-top: 25px;"><img src="{{ STATIC_URL }}img/Home/Book-Now/Saratoga Logo.png"></p>
+                <p class="text-center" style="margin-top: 25px;"><img src="{{ STATIC_URL }}img/Home/Book-Now/Saratoga Logo.png" style="width: 200px; height: 150px;"></p>
             </div>
         </div>
 
         <div class="col-sm-12">
-            <p class="text-center">You can make an online reservation in Cubaism.com <br> for more info or make a reservation: </p>
-            <p class="text-center"><a href="#" style="background: none; border: solid; border-color: white; color: white; text-transform: uppercase;"> book now</a></p>
+            <p class="text-center subtitle" style="text-transform: uppercase; color: white; font-size: 30px;">
+                <img src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament1.png" style="width: 60px; height: 20px;">
+                online reservation
+                <img src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament2.png" style="width: 60px; height: 20px;">
+            </p>
+            <p class="text-center" style="font-size: 20px;"><b> You can make an online reservation in Cubaism.com <br> for more info or make a reservation: </b></p>
+            <p class="text-center" style="margin-top: 30px;"><a class="confort-button" href="#" style="background: none; border: solid;
+            border-color: white; color: white; text-transform: uppercase; border-width: 1px;"> book now</a></p>
         </div>
     </div>
 
-    {# history #}
-    <div class="row history my-img-format" style="height: 1000px; padding-top: 20px;">
-        <div style="float: right; border-right-style: solid; border-right-color: black; width: 30%; margin-right: 10%; padding-right: 10px;">
-            <p style="text-align: right; color: white; text-transform: uppercase;">history</p>
-            <p style="text-align: right;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
-            <br>
-            <p class="text-right">read more</p>
+
+
+    {# History #}
+    <div class="row history my-img-format"  style="height: 1000px; padding-top: 50px;">
+        <div style="float: right; border-right-style: solid;width: 30%; margin-right: 5%; padding-right: 10px;">
+            <p class="title" style="text-align: right; color: white; text-transform: uppercase;">history</p>
+            <b><p style="text-align: right;">Toward 1933 on Prado street intersection with Dragones street was located Saratoga Hotel, it left behind its former location on Monte street, it stood the building where from then on is “Isla de Cuba Hotel”. The “new” building on Prado street was built by the Spaniard merchant Gregorio Palacios between 1879 and 1880 with the objective of lodging dwelling- houses, stores and boarding stores.</p></b>
+            <p class="text-right"><img style="width: 50px; height: 20px;" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png"> <a class="read-more">read more</a></p>
         </div>
     </div>
 

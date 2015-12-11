@@ -1,25 +1,33 @@
 {% extends 'base.html' %}
+{% load base_extras %}
 
 {% block content %}
 
     {# Hotels #}
      <div style="margin-left: 7%; margin-right: 7%; margin-top: 50px; background-color: #f8f8f8">
-        <div class="row">
-            <p class="text-center" style="color: black;
-                             font-size: 35px;
-                             text-transform: uppercase;">
-                <img src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament.png">
-                <span style="border-bottom-style: solid;
-                             border-top-style: solid;
-                             border-bottom-color: #d3bc78;
-                             border-top-color: #d3bc78;">
-                    other hotels
-                </span>
-                <img src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament2.png">
-            </p>
+        <div class="row" style="margin-top: 85px;">
+            <div class="col-sm-4" style="padding-right: 0;">
+                <p class="text-right"><img src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament.png" style="width: 140px; height: 45px;"></p>
+            </div>
+            <div class="col-sm-4 nopadding">
+                <p class="text-center" style="color: black;
+                                 font-size: 35px;
+                                 text-transform: uppercase;">
+                    <span style="border-bottom-style: solid;
+                                 border-top-style: solid;
+                                 border-bottom-color: #d3bc78;
+                                 border-top-color: #d3bc78;">
+                        other hotels
+                    </span>
+                </p>
+            </div>
+            <div class="col-sm-4" style="padding-left: 0;">
+                <p class="text-left"><img src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament2.png" style="width: 140px; height: 45px;"></p>
+            </div>
+
         </div>
         <div class="row">
-            <img style="max-width: 100%; width: 100%;" src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament3.png">
+            <img style="max-width: 100%; width: 100%; margin: 20px 0 20px 0; height: 50px;" src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament3.png">
         </div>
 
         {% for i in hotels %}
@@ -32,30 +40,41 @@
 {#                 <img src="{{ STATIC_URL }}img/other hotels/list image.png">#}
              </div>
              <div class="col-sm-9">
-                <p>{{ i.name }}</p>
-                <p>{{ i.address }}</p>
-                <p>{{ i.description }}</p>
+                <p style="font-size: 36px; color: #4a4849; margin-bottom: 5px;">
+                    {{ i.name }}
+                    {% for s in i.stars|create_range %}
+                        <img src="{{ STATIC_URL }}img/Other Hotels/star.png" style="width: 18px; height: 18px;">
+                    {% endfor %}
+                </p>
+                <p style="color: #9b9b9b; margin-bottom: 5px">{{ i.address }}</p>
+                <p style="margin-bottom: 5px; color: #4a4849;">{{ i.description }}</p>
              </div>
          </div>
 
          {% endfor %}
 
         <div class="row">
-            <img style="max-width: 100%; width: 100%;" src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament3.png">
+            <img style="max-width: 100%; width: 100%; margin: 20px 0 80px 0; height: 50px" src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament3.png">
         </div>
      </div>
 
     {# Book #}
-    <div class="booking my-img-format" style="color: white;">
+    <div class="booking-alternative my-img-format" style="color: white;">
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
-                <p class="text-center" style="margin-top: 25px;"><img src="{{ STATIC_URL }}img/Home/Book-Now/Saratoga Logo.png"></p>
+                <p class="text-center" style="margin-top: 25px;"><img src="{{ STATIC_URL }}img/Home/Book-Now/Saratoga Logo.png" style="width: 200px; height: 150px;"></p>
             </div>
         </div>
 
         <div class="col-sm-12">
-            <p class="text-center">You can make an online reservation in Cubaism.com <br> for more info or make a reservation: </p>
-            <p class="text-center"><a href="#" style="background: none; border: solid; border-color: white; color: white; text-transform: uppercase;"> book now</a></p>
+            <p class="text-center subtitle" style="text-transform: uppercase; color: white; font-size: 30px;">
+                <img src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament1.png" style="width: 60px; height: 20px;">
+                online reservation
+                <img src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament2.png" style="width: 60px; height: 20px;">
+            </p>
+            <p class="text-center" style="font-size: 20px;"><b> You can make an online reservation in Cubaism.com <br> for more info or make a reservation: </b></p>
+            <p class="text-center" style="margin-top: 30px;"><a class="confort-button" href="#" style="background: none; border: solid;
+            border-color: white; color: white; text-transform: uppercase; border-width: 1px;"> book now</a></p>
         </div>
     </div>
 

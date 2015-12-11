@@ -39,17 +39,22 @@
      </div>
 
     {# Book #}
-    <div class="booking my-img-format" style="color: white;">
+    <div class="booking-alternative my-img-format" style="color: white;">
         <div class="row" style="margin-top: 10px;">
             <div class="col-sm-12">
-                <p class="text-center" style="margin-top: 25px;"><img src="{{ STATIC_URL }}img/Home/Book-Now/Saratoga Logo.png"></p>
+                <p class="text-center" style="margin-top: 25px;"><img src="{{ STATIC_URL }}img/Home/Book-Now/Saratoga Logo.png" style="width: 200px; height: 150px;"></p>
             </div>
         </div>
 
         <div class="col-sm-12">
-            <p class="text-center">You can make an online reservation in Cubaism.com <br> for more info or make a reservation: </p>
-            <p class="text-center"><a href="#" style="background: none; border: solid; border-color: white; color: white; text-transform: uppercase;"> book now</a></p>
+            <p class="text-center subtitle" style="text-transform: uppercase; color: white; font-size: 30px;">
+                <img src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament1.png" style="width: 60px; height: 20px;">
+                online reservation
+                <img src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament2.png" style="width: 60px; height: 20px;">
+            </p>
+            <p class="text-center" style="font-size: 20px;"><b> You can make an online reservation in Cubaism.com <br> for more info or make a reservation: </b></p>
+            <p class="text-center" style="margin-top: 30px;"><a class="confort-button" href="#" style="background: none; border: solid;
+            border-color: white; color: white; text-transform: uppercase; border-width: 1px;"> book now</a></p>
         </div>
     </div>
-
 {% endblock %}
