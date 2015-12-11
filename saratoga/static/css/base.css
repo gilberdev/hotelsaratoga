@@ -5,6 +5,10 @@ body{
     font-size: 17px;
 }
 
+a:hover{
+    color: black;
+}
+
 .chapter_header{
     font-family: 'TimesNewRomanPSMT' ;
     font-size: 52px;
@@ -26,11 +30,12 @@ body{
     line-height: 59px
 }
 
-.read_more{
+.read-more{
     font-family: 'TimesNewRomanPSMT' ;
-    font-size: 29px;
+    font-size: 20px;
     color: #000000;
-    line-height: 59px
+    line-height: 59px;
+    text-transform: uppercase;
 }
 
 .message{
@@ -198,6 +203,7 @@ nav ul {
 .history{
     /*height: 1000px*/
     background-image: url('../img/Home/History/background.png');
+    color: black;
 }
 
 /*******************************************/
