@@ -2,7 +2,7 @@
 
 body{
     font-family: "Open Sans";
-    font-size: 17px;
+    font-size: 14px;
 }
 
 a:hover{
@@ -17,7 +17,7 @@ a:hover{
 }
 
 .title{
-    font-family: 'TimesNewRomanPSMT' ;
+    font-family: 'TimesNewRomanPSMT';
     font-size: 48px;
     color: #000000;
     line-height: 59px
@@ -45,7 +45,7 @@ a:hover{
 }
 
 .signature{
-    margin: 20px 0 0;
+    margin: 20px 0 20px;
     font-family: 'Angelou';
     color: #bfbfbf;
     font-size: 25px;
@@ -151,8 +151,9 @@ a:hover{
 }
 
 nav ul {
-    border-bottom: 2px solid white;
-    border-top: 2px solid white;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding: 0 2px 0 2px;
 }
 
 #circle {
@@ -182,9 +183,11 @@ nav ul {
 
 .hotel-name{
     color: #ffffff;
-    font-size: 31px;
+    font-size: 43px;
     text-transform: uppercase;
     border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding-bottom: 7px
 }
 
 .hotel-logo{
