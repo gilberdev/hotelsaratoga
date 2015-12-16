@@ -21,10 +21,7 @@
     {% endcompress %}
   {% endif %}
 
-    {# Polaroid CSS #}
-    <link rel="stylesheet" type="text/css" href=" {% static 'css/ScatteredPolaroids/normalize.css' %}">
-    <link rel="stylesheet" type="text/css" href=" {% static 'css/ScatteredPolaroids/demo.css' %}">
-    <link rel="stylesheet" type="text/css" href=" {% static 'css/ScatteredPolaroids/component.css' %}">
+    {% block styles %}{% endblock %}
 
     <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/dist/css/bootstrap.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css' %}">
@@ -95,19 +92,12 @@
   </footer>
   <!-- Google CDN jQuery with a local fallback -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
   <script>window.jQuery || document.write('<script src="/static/js/libs/jquery-1.11.2.min.js"><\/script>')</script>
   {% compress js %}
     <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.js' %}"></script>
     <script src="{% static 'js/app.js' %}"></script>
-    <script src="{% static 'js/ScatteredPolaroids/classie.js' %}"></script>
-    <script src="{% static 'js/ScatteredPolaroids/photostack.js' %}"></script>
-    <script>
-    new Photostack( document.getElementById( 'photostack-1' ), {
-				callback : function( item ) {
-					//console.log(item)
-				}
-			} );
-  </script>
+    {% block scripts %}{% endblock %}
   {% endcompress %}
 
   <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID -->

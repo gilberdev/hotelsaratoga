@@ -254,6 +254,7 @@ nav ul {
 .rooms{
     background-image: url('../img/Home/Rooms/Capitol%20View%20Image.png');
     height: 600px;
+    background-repeat: no-repeat;
 }
 
 

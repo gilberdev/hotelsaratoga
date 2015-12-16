@@ -1,4 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+
+    {# Polaroid CSS #}
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/ScatteredPolaroids/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/ScatteredPolaroids/demo.css' %}">
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/ScatteredPolaroids/component.css' %}">
+
+    {# OwlCarousel CSS #}
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/owlcarousel/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/owlcarousel/owl.theme.css' %}">
+
+{% endblock %}
 
 {% block content %}
 
@@ -186,13 +200,13 @@
 
     {# Rooms #}
 
-    <div class="table" style="background-color: black;margin-bottom: 0">
-        <div class="table-row">
-            <div class="col">
+    <div class="row" style="background-color: black;margin-bottom: 0">
+{#        <div class="table-row">#}
+            <div class="col-sm-7" id="textrooms">
                 <div class="row" id="two-columns-rooms" style="color: white;">
                     <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png'); background-size: 100% 100%; height: 50px;"></div>
                     <p style="text-transform: uppercase; font-size: 30px; text-align: center;">rooms</p>
-                    <img style="background-size: 100% 100%;" src="{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png">
+                    <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png'); background-size: 100% 100%; height: 50px;"></div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
                     <p>Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus. Ut velit nibh, convallis at odio non, sodales euismod sapien. Morbi at libero ut nisi feugiat fringilla. Sed tincidunt urna at dolor lobortis, eu sodales lacus imperdiet. Phasellus vel aliquet metus. Ut ut felis sapien.</p>
                 </div>
@@ -200,10 +214,10 @@
                     <p style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus.</p>
                 </div>
             </div>
-            <div class="col rooms" style="width: 40%; background-size: 100% 100%; height: 100%">
+            <div class="col-sm-5 rooms" id="photo-rooms">
 
             </div>
-        </div>
+{#        </div>#}
     </div>
 
     {# Facilities #}
@@ -437,6 +451,121 @@
 
     </div>
 
+    <div id="owl-demo" class="owl-carousel owl-theme" style="color: white;">
+
+      <div class="item">
+              <div class="row" style="background-color: black;margin-bottom: 0">
+        {#        <div class="table-row">#}
+                    <div class="col-sm-7" id="textrooms">
+                        <div class="row" id="two-columns-rooms" style="color: white;">
+                            <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png'); background-size: 100% 100%; height: 50px;"></div>
+                            <p style="text-transform: uppercase; font-size: 30px; text-align: center;">rooms</p>
+                            <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png'); background-size: 100% 100%; height: 50px;"></div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
+                            <p>Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus. Ut velit nibh, convallis at odio non, sodales euismod sapien. Morbi at libero ut nisi feugiat fringilla. Sed tincidunt urna at dolor lobortis, eu sodales lacus imperdiet. Phasellus vel aliquet metus. Ut ut felis sapien.</p>
+                        </div>
+                        <div class="row">
+                            <p style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 rooms" id="photo-rooms">
+
+                    </div>
+        {#        </div>#}
+            </div>
+      </div>
+      <div class="item">
+            <div class="row" style="background-color: black;margin-bottom: 0">
+        {#        <div class="table-row">#}
+                    <div class="col-sm-7" id="textrooms">
+                        <div class="row" id="two-columns-rooms" style="color: white;">
+                            <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png'); background-size: 100% 100%; height: 50px;"></div>
+                            <p style="text-transform: uppercase; font-size: 30px; text-align: center;">rooms</p>
+                            <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png'); background-size: 100% 100%; height: 50px;"></div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
+                            <p>Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus. Ut velit nibh, convallis at odio non, sodales euismod sapien. Morbi at libero ut nisi feugiat fringilla. Sed tincidunt urna at dolor lobortis, eu sodales lacus imperdiet. Phasellus vel aliquet metus. Ut ut felis sapien.</p>
+                        </div>
+                        <div class="row">
+                            <p style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 rooms" id="photo-rooms">
+
+                    </div>
+        {#        </div>#}
+            </div>
+      </div>
+      <div class="item">
+            <div class="row" style="background-color: black;margin-bottom: 0">
+        {#        <div class="table-row">#}
+                    <div class="col-sm-7" id="textrooms">
+                        <div class="row" id="two-columns-rooms" style="color: white;">
+                            <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png'); background-size: 100% 100%; height: 50px;"></div>
+                            <p style="text-transform: uppercase; font-size: 30px; text-align: center;">rooms</p>
+                            <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png'); background-size: 100% 100%; height: 50px;"></div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
+                            <p>Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus. Ut velit nibh, convallis at odio non, sodales euismod sapien. Morbi at libero ut nisi feugiat fringilla. Sed tincidunt urna at dolor lobortis, eu sodales lacus imperdiet. Phasellus vel aliquet metus. Ut ut felis sapien.</p>
+                        </div>
+                        <div class="row">
+                            <p style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 rooms" id="photo-rooms">
+
+                    </div>
+        {#        </div>#}
+            </div>
+      </div>
+
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+
+    {# Polaroid JS #}
+    <script src="{% static 'js/ScatteredPolaroids/classie.js' %}"></script>
+    <script src="{% static 'js/ScatteredPolaroids/photostack.js' %}"></script>
+    <script>
+    new Photostack( document.getElementById( 'photostack-1' ), {
+				callback : function( item ) {
+					//console.log(item)
+				}
+			} );
 
 
+    var h1 = $("#textrooms").height();
+    var h2 = $("#photo-rooms").height();
+    $(document).ready(function() {
+        same_height('text-rooms', 'photo-rooms');
+    })
+    $(window).resize(function() {
+        same_height('text-rooms', 'photo-rooms');
+    })
+    </script>
+
+    {# OwlCarousel CSS #}
+    <script src="{% static 'js/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script>
+      $(document).ready(function() {
+
+      $("#owl-demo").owlCarousel({
+
+          navigation : true, // Show next and prev buttons
+          slideSpeed : 300,
+          paginationSpeed : 400,
+          singleItem:true,
+          pagination:false
+
+          // "singleItem:true" is a shortcut for:
+          // items : 1,
+          // itemsDesktop : false,
+          // itemsDesktopSmall : false,
+          // itemsTablet: false,
+          // itemsMobile : false
+
+      });
+
+    });
+    </script>
 {% endblock %}
