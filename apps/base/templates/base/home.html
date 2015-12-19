@@ -22,7 +22,7 @@
 
     {# Header and Message #}
     <section id="home-sec">
-        <div class="row my-img-format page-header parent" style="border-bottom-width: 0; margin-top: 0px;">
+        <div class="row my-img-format my-page-header parent" style="border-bottom-width: 0; margin-top: 0px;">
             <div class="row">
                 <p class="text-center">
                     <span class="hotel-name subtitle"> hotel saratoga habana </span>
@@ -189,7 +189,7 @@
                     </div>
                 </div>
                 <div class="row" style="padding: 15px;">
-                    <p class="text-right" style="text-transform: uppercase;font-size: 14px"> <a href="#" style="color: black">previous news</a> <img src="{{ STATIC_URL }}img/Home/News/Disclosure.png" style="height: 14px;width: 10px;"></p>
+                    <p class="text-right" style="text-transform: uppercase;font-size: 14px"> <a href="{% url 'news' %}" style="color: black">previous news</a> <img src="{{ STATIC_URL }}img/Home/News/Disclosure.png" style="height: 14px;width: 10px;"></p>
                 </div>
             </div>
         </div>
@@ -202,41 +202,171 @@
                 <p class="title" style="text-align: right; color: white; text-transform: uppercase;">history</p>
                 <p style="text-align: right;padding-left: 140px;">Toward 1933 on Prado street intersection with Dragones street was located Saratoga Hotel, it left behind its former location on Monte street, it stood the building where from then on is “Isla de Cuba Hotel”. The “new” building on Prado street was built by the Spaniard merchant Gregorio Palacios between 1879 and 1880 with the objective of lodging dwelling- houses, stores and boarding stores.</p>
                 <p class="text-right"><img style="width: 50px; height: 20px;" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
-                    <a href="#" style="text-transform: uppercase;color: black;font-size: 14px;font-family:'TimesNewRoman'; ">Read More</a>
+                    <a href="{% url 'history' %}" style="text-transform: uppercase;color: black;font-size: 14px;font-family:'TimesNewRoman'; ">Read More</a>
                 </p>
             </div>
         </div>
     </section>
 
     {# Rooms #}
-    <section id="rooms-sec">
-        <div class="row" style="background-color: black;margin-bottom: 0">
-    {#        <div class="table-row">#}
-                <div class="col-sm-7" id="textrooms">
-                    <div class="row" id="two-columns-rooms" style="color: white;">
-                        <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png'); background-size: 100% 100%; height: 50px;"></div>
-                        <p style="text-transform: uppercase; font-size: 30px; text-align: center;">rooms</p>
-                        <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png'); background-size: 100% 100%; height: 50px;"></div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
-                        <p>Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus. Ut velit nibh, convallis at odio non, sodales euismod sapien. Morbi at libero ut nisi feugiat fringilla. Sed tincidunt urna at dolor lobortis, eu sodales lacus imperdiet. Phasellus vel aliquet metus. Ut ut felis sapien.</p>
+    <section id="rooms">
+           <div id="owl-demo" class="owl-carousel owl-theme" style="color: white;">
+      <div class="item">
+              <div class="row" style="background-color: black;margin-bottom: 0">
+        {#        <div class="table-row">#}
+                    <div class="col-sm-7" id="textrooms">
+                        <div class="row" id="two-columns-rooms" style="color: white;">
+                            <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png'); background-size: 100% 100%; height: 50px;"></div>
+                            <p style="text-transform: uppercase; font-size: 30px; text-align: center;">rooms</p>
+                            <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png'); background-size: 100% 100%; height: 50px;"></div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
+                            <p>Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus. Ut velit nibh, convallis at odio non, sodales euismod sapien. Morbi at libero ut nisi feugiat fringilla. Sed tincidunt urna at dolor lobortis, eu sodales lacus imperdiet. Phasellus vel aliquet metus. Ut ut felis sapien.</p>
+                        </div>
+                        <div class="row">
+                            <p style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus.</p>
+                        </div>
                     </div>
-                    <div class="row">
-                        <p style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus.</p>
+                    <div class="col-sm-5 rooms" id="photo-rooms">
+                        <button id="gallery-btn" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
+                        background-color: transparent;
+                        background-size: 100% 100%;
+                        width: 80px;
+                        height: 80px;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        border-style: none"></button>
                     </div>
-                </div>
-                <div class="col-sm-5 rooms" id="photo-rooms" style="position: relative;">
-                    <button id="gallery-btn" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
-                            background-color: transparent;
-                            background-size: 100% 100%;
-                            width: 80px;
-                            height: 80px;
-                            position: absolute;
-                            right: 0;
-                            bottom: 0;
-                            border-style: none"></button>
-                </div>
-        {#</div>#}
-        </div>
+        {#        </div>#}
+            </div>
+      </div>
+      <div class="item">
+            <div class="row" style="background-color: black;margin-bottom: 0">
+        {#        <div class="table-row">#}
+                    <div class="col-sm-7" id="textrooms">
+                        <div class="row" id="two-columns-rooms" style="color: white;">
+                            <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png'); background-size: 100% 100%; height: 50px;"></div>
+                            <p style="text-transform: uppercase; font-size: 30px; text-align: center;">rooms</p>
+                            <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png'); background-size: 100% 100%; height: 50px;"></div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
+                            <p>Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus. Ut velit nibh, convallis at odio non, sodales euismod sapien. Morbi at libero ut nisi feugiat fringilla. Sed tincidunt urna at dolor lobortis, eu sodales lacus imperdiet. Phasellus vel aliquet metus. Ut ut felis sapien.</p>
+                        </div>
+                        <div class="row">
+                            <p style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus.</p>
+                        </div>
+                    </div>
+            <div class="col-sm-5 rooms" id="photo-rooms" style="position: relative;">
+                <button id="gallery-btn" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
+                        background-color: transparent;
+                        background-size: 100% 100%;
+                        width: 80px;
+                        height: 80px;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        border-style: none"></button>
+            </div>
+        {#        </div>#}
+            </div>
+      </div>
+      <div class="item">
+            <div class="row" style="background-color: black;margin-bottom: 0">
+        {#        <div class="table-row">#}
+                    <div class="col-sm-7" id="textrooms">
+                        <div class="row" id="two-columns-rooms" style="color: white;">
+                            <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png'); background-size: 100% 100%; height: 50px;"></div>
+                            <p style="text-transform: uppercase; font-size: 30px; text-align: center;">rooms</p>
+                            <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png'); background-size: 100% 100%; height: 50px;"></div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
+                            <p>Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus. Ut velit nibh, convallis at odio non, sodales euismod sapien. Morbi at libero ut nisi feugiat fringilla. Sed tincidunt urna at dolor lobortis, eu sodales lacus imperdiet. Phasellus vel aliquet metus. Ut ut felis sapien.</p>
+                        </div>
+                        <div class="row">
+                            <p style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-5 rooms" id="photo-rooms">
+                        <button id="gallery-btn-3" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
+                        background-color: transparent;
+                        background-size: 100% 100%;
+                        width: 80px;
+                        height: 80px;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        border-style: none"></button>
+                        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+                        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+                            <!-- Background of PhotoSwipe.
+                                 It's a separate element, as animating opacity is faster than rgba(). -->
+                            <div class="pswp__bg"></div>
+
+                            <!-- Slides wrapper with overflow:hidden. -->
+                            <div class="pswp__scroll-wrap">
+
+                                <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+                                <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+                                <div class="pswp__container">
+                                    <div class="pswp__item"></div>
+                                    <div class="pswp__item"></div>
+                                    <div class="pswp__item"></div>
+                                </div>
+
+                                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                                <div class="pswp__ui pswp__ui--hidden">
+
+                                    <div class="pswp__top-bar">
+
+                                        <!--  Controls are self-explanatory. Order can be changed. -->
+
+                                        <div class="pswp__counter"></div>
+
+                                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                                        {#                        <button class="pswp__button pswp__button--share" title="Share"></button>#}
+
+                                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                                        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                                        <!-- element will get class pswp__preloader--active when preloader is running -->
+                                        <div class="pswp__preloader">
+                                            <div class="pswp__preloader__icn">
+                                                <div class="pswp__preloader__cut">
+                                                    <div class="pswp__preloader__donut"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                                        <div class="pswp__share-tooltip"></div>
+                                    </div>
+
+                                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                                    </button>
+
+                                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                                    </button>
+
+                                    <div class="pswp__caption">
+                                        <div class="pswp__caption__center"></div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+        {#        </div>#}
+            </div>
+      </div>
+
+    </div>
     </section>
 
     {# Facilities #}
@@ -439,7 +569,7 @@
     {# Booking Area #}
     <section id="online-reservations-sec">
         <div class="booking my-img-format" style="color: white;">
-            <div class="row" style="margin-top: 10px;">
+            <div class="row" style="padding-top: 10px;">
                 <div class="col-sm-2">
                     <p class="text-left"><img class="" src="{{ STATIC_URL }}img/Home/Book-Now/Gold Corner Ornament1.png" style="width: 90px; width: 70px;"></p>
                 </div>
@@ -682,8 +812,11 @@
     </script>
 
     {# PhotoSwipe JS #}
-    <script src="{% static 'js/photoswipe/photoswipe.min.js' %}"></script>
-    <script src="{% static 'js/photoswipe/photoswipe-ui-default.min.js' %}"></script>
+    {#<script src="{% static 'js/photoswipe/photoswipe.min.js' %}"></script>
+    <script src="{% static 'js/photoswipe/photoswipe-ui-default.min.js' %}"></script>#}
+    <script src="http://photoswipe.s3-eu-west-1.amazonaws.com/pswp/dist/photoswipe.min.js"></script>
+    <script src="http://photoswipe.s3-eu-west-1.amazonaws.com/pswp/dist/photoswipe-ui-default.min.js"></script>
+    <script src="{% static "js/libs/classie.js" %}"></script>
 
     <script>
         var openPhotoSwipe = function() {
