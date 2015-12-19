@@ -254,6 +254,7 @@ nav ul {
 .rooms{
     background-image: url('../img/Home/Rooms/Capitol%20View%20Image.png');
     height: 600px;
+
     background-repeat: no-repeat;
 }
 
@@ -282,6 +283,20 @@ nav ul {
 }
 
 
+
+/*
+.owl-prev, .owl-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    background-color: #fff;
+}
+.owl-next {
+    right: 0px;
+}*/
 /*******************************************/
 
 
