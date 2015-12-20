@@ -212,13 +212,29 @@ nav ul {
     height: 600px;
 }
 
-#two-columns{ padding-top: 30px;
-            padding-bottom: 30px;
-            padding-left: 20%;
-            padding-right: 20%;
-            column-count: 2;
-            -moz-column-count: 2;
-            -webkit-column-count: 2;
+/*Mobile*/
+@media (max-width: 500px) {
+
+    #two-columns{ padding-top: 30px;
+                padding-bottom: 30px;
+                padding-left: 20%;
+                padding-right: 20%;
+                column-count: 1;
+                -moz-column-count: 1;
+                -webkit-column-count: 1;
+    }
+}
+/*Full Scree*/
+@media (min-width: 500px) {
+
+    #two-columns{ padding-top: 30px;
+                padding-bottom: 30px;
+                padding-left: 20%;
+                padding-right: 20%;
+                column-count: 2;
+                -moz-column-count: 2;
+                -webkit-column-count: 2;
+    }
 }
 
 /*******************************************/
@@ -259,14 +275,28 @@ nav ul {
     background-repeat: no-repeat;
 }
 
-
-#two-columns-rooms{ padding-top: 30px;
+/*Mobile*/
+@media (min-width: 500px) {
+    #two-columns-rooms{ padding-top: 30px;
             padding-bottom: 30px;
             padding-left: 10%;
             padding-right: 10%;
             column-count: 2;
             -moz-column-count: 2;
             -webkit-column-count: 2;
+    }
+}
+
+/*Full Screen*/
+@media (max-width: 500px) {
+    #two-columns-rooms{ padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 10%;
+            padding-right: 10%;
+            column-count: 1;
+            -moz-column-count: 1;
+            -webkit-column-count: 1;
+    }
 }
 
 .table {
@@ -355,6 +385,108 @@ nav ul {
     background-image: url('../img/Home/Book-Now/Footer%20+%20Rectangle%2031%20Copy.png');
     padding: 45px;
 }
+
+.ornament-top-left{
+     width: 90px;
+     width: 70px;
+     position: absolute;
+     left: 15px;
+     top: 0;
+}
+
+.ornament-top-right{
+     width: 90px;
+     width: 70px;
+     position: absolute;
+     right: 15px;
+     top: 0;
+}
+
+.ornament-bottom-right{
+     width: 90px;
+     width: 70px;
+     position: absolute;
+     right: 15px;
+     bottom: 10px;
+}
+
+.ornament-bottom-left{
+     width: 90px;
+     width: 70px;
+     position: absolute;
+     left: 15px;
+     bottom: 10px;
+}
+
+.book-now-button{
+    background: none;
+    border: solid;
+    border-color: white;
+    color: white;
+    text-transform: uppercase;
+    border-width: 1px;
+    padding: 5px 15px 5px 15px;
+    font-weight: bold;
+}
+
+/*Full Screen*/
+@media (min-width: 575px) {
+    .online-reservation{
+    font-family: 'TimesNewRomanPSMT' ;
+    line-height: 59px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 30px;
+    }
+
+    .ornament-text{
+    width: 60px;
+    height: 20px;
+    }
+
+    .book-now-message{
+        font-size: 20px;
+        color: white;
+    }
+}
+
+/*Phone*/
+@media (max-width: 575px){
+    .online-reservation{
+        font-family: 'TimesNewRomanPSMT' ;
+        line-height: 59px;
+        text-transform: uppercase;
+        color: white;
+        font-size: 18px;
+    }
+
+    .ornament-text{
+    width: 30px;
+    height: 10px;
+    }
+
+    .book-now-message{
+        font-size: 13px;
+        color: white;
+    }
+}
+
+.booking-saratoga-logo{
+    padding-top: 25px;
+}
+
+.ten-px-padding-top{
+    padding-top: 10px;
+}
+
+.thirty-px-margin-top{
+    margin-top: 30px;
+}
+
+.eighty-px-margin-top{
+    margin-top: 80px;
+}
+
 /*
 .center-table {
   display: table;
@@ -392,7 +524,7 @@ nav ul {
 
 #copyright{
     color: #9b9b9b;
-    width: 450px;
+    /*width: 450px;*/
     font-size: 14px;
     margin-bottom: 25px;
 }
