@@ -83,7 +83,7 @@
             </div>
 
             {# gallery photo #}
-            <div id="photostack-1" class="photostack photostack-start">
+            <div id="photostack-1" class="photostack">
                 <div>
                     <figure>
                         <a href="http://goo.gl/Qw3ND4" class="photostack-img"><img src="{{ STATIC_URL }}img/ScatteredPolaroids/1.jpg" alt="img01"/></a>
@@ -197,12 +197,15 @@
 
     {# History #}
     <section id="history-sec">
-        <div class="row history my-img-format"  style="height: 1000px; padding-top: 50px;">
-            <div class="col-sm-push-8 col-sm-1" style="border-right-style: solid;width: 30%; /*margin-right: 5%;*/ padding-right: 10px;">
-                <p class="title" style="text-align: right; color: white; text-transform: uppercase;">history</p>
-                <p style="text-align: right; height: 50px">Toward 1933 on Prado street intersection with Dragones street was located Saratoga Hotel, it left behind its former location on Monte street, it stood the building where from then on is “Isla de Cuba Hotel”. The “new” building on Prado street was built by the Spaniard merchant Gregorio Palacios between 1879 and 1880 with the objective of lodging dwelling- houses, stores and boarding stores.</p>
-                <p class="text-right"><img style="width: 50px; height: 20px;" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
-                    <a href="{% url 'history' %}" style="text-transform: uppercase;color: black;font-size: 14px;font-family:'TimesNewRoman'; ">Read More</a>
+        <div class="row history my-img-format history-custom-background">
+            <div class="history-text-area">
+                <p class="title history-title" >history</p>
+                <p class="text-right">
+                    Toward 1933 on Prado street intersection with Dragones street was located Saratoga Hotel, it left behind its former location on Monte street, it stood the building where from then on is “Isla de Cuba Hotel”. The “new” building on Prado street was built by the Spaniard merchant Gregorio Palacios between 1879 and 1880 with the objective of lodging dwelling- houses, stores and boarding stores.
+                </p>
+                <p class="text-right">
+                    <img class="history-img-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
+                    <a class="history-page-link" href="{% url 'history' %}">Read More</a>
                 </p>
             </div>
         </div>

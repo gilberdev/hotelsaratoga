@@ -264,6 +264,49 @@ nav ul {
     color: black;
 }
 
+.history-custom-background{
+    height: 1000px;
+    padding-top: 50px;
+}
+
+@media (min-width: 350px){
+    .history-text-area{
+        position: absolute;
+        right: 60px;
+        border-right-style: solid;
+        padding-right: 10px;
+        width: 230px;
+    }
+}
+@media (max-width: 350px){
+    .history-text-area{
+        margin: 0 auto;
+        border-right-style: solid;
+        padding-right: 10px;
+        width: 230px;
+    }
+}
+
+
+.history-title{
+    font-size:43px;
+    width: 100%;
+    text-align: right;
+    color: white;
+    text-transform: uppercase;
+}
+
+.history-img-ornament{
+    width: 50px;
+    height: 20px;
+}
+
+.history-page-link{
+    text-transform: uppercase;
+    color: black;
+    font-size: 14px;
+    font-family:'TimesNewRoman';
+}
 /*******************************************/
 
 
