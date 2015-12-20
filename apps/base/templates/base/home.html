@@ -85,12 +85,24 @@
             {# gallery photo #}
             <div id="photostack-1" class="photostack">
                 <div>
-                    <figure>
-                        <a href="http://goo.gl/Qw3ND4" class="photostack-img"><img src="{{ STATIC_URL }}img/ScatteredPolaroids/1.jpg" alt="img01"/></a>
-                        <figcaption>
-                            <h2 class="photostack-title">Serenity Beach</h2>
-                        </figcaption>
-                    </figure>
+                    {% for i in polaroids %}
+                        {% if not i.dummy %}
+                            <figure>
+                                <a href="" class="photostack-img"><img src="{{ i.photo.url }}"/></a>
+                                <figcaption>
+                                    <h2 class="photostack-title">{{ i.caption }}</h2>
+                                </figcaption>
+                            </figure>
+                        {% else %}
+                            <figure data-dummy>
+                            <a href="" class="photostack-img"><img src="{{ i.photo.url }}"/></a>
+                            <figcaption>
+                                <h2 class="photostack-title">{{ i.caption }}</h2>
+                            </figcaption>
+                        </figure>
+                        {% endif %}
+                    {% endfor %}
+
                     <figure>
                         <a href="http://goo.gl/fhwlSP" class="photostack-img"><img src="{{ STATIC_URL }}img/ScatteredPolaroids/2.jpg" alt="img02"/></a>
                         <figcaption>

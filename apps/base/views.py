@@ -1,12 +1,14 @@
 """Views for the base app"""
 
 from django.shortcuts import render
-from .models import Hotel
+from .models import Hotel, Polaroid
 
 
 def home(request):
     """ Default view for the root """
-    return render(request, 'base/home.html')
+    polaroid_list = Polaroid.objects.all()
+
+    return render(request, 'base/home.html', {'polaroids': polaroid_list})
 
 def history(request):
     """ Default view for the history """
