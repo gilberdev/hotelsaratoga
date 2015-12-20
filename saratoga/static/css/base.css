@@ -502,6 +502,11 @@ nav ul {
 
 
 /*************** Footer Styles *************/
+.center-midddle-full-width{
+    margin: 0 auto;
+    width: 100%;
+}
+
 
 .center-middle{
     margin: 0 auto;
