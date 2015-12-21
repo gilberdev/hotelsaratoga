@@ -51,6 +51,10 @@ a:hover{
     font-size: 25px;
 }
 
+.roman{
+    font-family: 'TimesNewRomanPSMT';
+}
+
 .navbar .navbar-nav {
   display: inline-block;
   float: none;
@@ -243,6 +247,50 @@ nav ul {
 /****************** News *******************/
 .news{
     background-image: url('../img/Home/News/Texture%20Background.png');
+    padding-top: 15px;
+}
+
+.news-margin{
+    margin: 0 7% 0 7%;
+}
+
+.news-title{
+    color: black;
+    font-size: 43px;
+    line-height: 59px;
+    font-family: 'TimesNewRomanPSMT';
+    text-transform: uppercase;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+}
+
+.news-row-title{
+    margin-bottom: 20px;
+}
+
+.news-logo-saratoga{
+    width: 42px;
+    height: 42px;
+    margin-bottom: 17px;
+    margin-left: 4px;
+}
+
+.news-empty-photo{
+    height: 300px;
+    background-color: white;
+    padding-top: 100px;
+}
+
+.news-empty-photo-ornament{
+    background-color: white;
+    width: 180px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.news-area{
+    background-color: white;
+    padding: 55px;
 }
 
 .empty-photo{
@@ -253,6 +301,72 @@ nav ul {
     background-size: 100% 100%;
     width: 100%;
     height: 300px;
+}
+
+.photo-format-empty{
+    background-size: 100% 100%;
+    background-color: white;
+    width: 180px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.new-left{
+    padding-right: 10px;
+}
+
+.new-right{
+    padding-left: 10px;
+}
+
+.row-previous-news{
+    padding: 15px;
+}
+
+.news-header{
+    font-size: 36px;
+    color: black;
+    margin-bottom: 0px;
+    font-family: 'TimesNewRomanPSMT';
+}
+
+.news-subheader{
+    color: #4a4a4a;
+    margin-bottom: 0px;
+    font-size: 24px;
+    font-family: 'TimesNewRomanPSMT';
+}
+
+.news-authorsip{
+    color: #d4bd79;
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+.news-body{
+    color: #d4bd79;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.no-margin-bottom{
+    margin-bottom: 0;
+}
+
+.link-previous-news{
+    color: black;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.previous-news-link-ornament{
+    height: 14px;
+    width: 10px;
+}
+
+.news-read-more-ornament{
+    width: 40px;
+    height: 13px;
 }
 /*******************************************/
 
