@@ -349,6 +349,12 @@ nav ul {
     margin-top: 20px;
 }
 
+.limit-five-rows{
+    max-height: 7em;
+    overflow: hidden;
+    line-height: 1.43;
+}
+
 .no-margin-bottom{
     margin-bottom: 0;
 }
@@ -528,6 +534,12 @@ nav ul {
     padding: 5px 15px 5px 15px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.limit-tree-rows{
+    max-height: 4em;
+    overflow: hidden;
+    line-height: 1.43;
 }
 
 /*******************************************/
