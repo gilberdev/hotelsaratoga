@@ -14,12 +14,12 @@ class Hotel(models.Model):
         return self.name
 
 
-class News(models.Model):
+class New(models.Model):
     title = models.CharField(max_length=50)
     subtitle = models.CharField(max_length=100)
     author = models.CharField(max_length=35)
     date = models.DateTimeField()
-    image = models.ImageField(upload_to='news photos')
+    image = models.ImageField(upload_to='news photos', null=True)
     corpus = models.TextField()
 
     def __str__(self):

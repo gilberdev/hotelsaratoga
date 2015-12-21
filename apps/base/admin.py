@@ -1,8 +1,8 @@
 __author__ = 'Gilber'
 from django.contrib import admin
 
-from .models import Hotel, News, Polaroid
+from .models import Hotel, New, Polaroid
 
 admin.site.register(Hotel)
-admin.site.register(News)
+admin.site.register(New)
 admin.site.register(Polaroid)

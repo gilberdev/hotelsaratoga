@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load base_extras %}
 
 {% block styles %}
 
@@ -164,16 +165,22 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6 new-left">
+                        {% if left_new.image %}
                         <div>
-                            <img class="photo-format nopadding" src="{{ STATIC_URL }}img/Home/News/News photo Example.png">
+                            <img class="photo-format nopadding" src="{{ left_new.image.url }}">
                         </div>
+                        {% else %}
+                        <div class="news-empty-photo">
+                            <img class="photo-format-empty img-responsive " src="{{ STATIC_URL }}img/Home/News/Gold Ornament Big.png">
+                        </div>
+                        {% endif %}
                         <div class="news-area">
                             <p class="news-header">
-                                This is the First Title
+                                {{ left_new.title }}
                             </p>
-                            <p class="news-subheader">Subtitle for this new</p>
-                            <p class="news-authorsip">By Marcel Fernández. September 24, 2015. 20:30PM</p>
-                            <p class="no-margin-bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra.</p>
+                            <p class="news-subheader">{{ left_new.subtitle }}{{ left_new.date }}</p>
+                            <p class="news-authorsip">By {{ left_new.author }}. {{ left_new.date|customize_date }}</p>
+                            <p class="no-margin-bottom">{{ left_new.corpus }}</p>
                             <p class="text-center news-body">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
                                 <a href="#" class="link-previous-news roman">Read More</a>
@@ -182,16 +189,22 @@
                         </div>
                     </div>
                     <div class="col-sm-6 new-right">
+                        {% if right_new.image %}
+                        <div>
+                            <img class="photo-format nopadding" src="{{ right_new.image.url }}">
+                        </div>
+                        {% else %}
                         <div class="news-empty-photo">
                             <img class="photo-format-empty img-responsive " src="{{ STATIC_URL }}img/Home/News/Gold Ornament Big.png">
                         </div>
+                        {% endif %}
                         <div class="news-area">
                             <p class="news-header">
-                                This is the First Title
+                                {{ right_new.title }}
                             </p>
-                            <p class="news-subheader">Subtitle for this new</p>
-                            <p class="news-authorsip">By Marcel Fernández. September 24, 2015. 20:30PM</p>
-                            <p class="no-margin-bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra.</p>
+                            <p class="news-subheader">{{ right_new.subtitle }}</p>
+                            <p class="news-authorsip">By {{ right_new.author }}. {{ right_new.date|customize_date }}</p>
+                            <p class="no-margin-bottom">{{ right_new.corpus }}</p>
                             <p class="text-center news-body">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
                                 <a href="#" class="link-previous-news roman">Read More</a>
