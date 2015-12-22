@@ -264,8 +264,26 @@ nav ul {
     border-bottom-width: 3px;
 }
 
+.news-title-borders{
+    border-top-style: solid;
+    border-top-width: 3px;
+    border-color: #d3bc78;
+}
+
+.news-page-title-ornamet{
+    width: 150px;
+    height: 55px;
+    margin-bottom: 21px;
+}
+
 .news-row-title{
     margin-bottom: 20px;
+}
+
+.background-news-page{
+    margin: 0 7% 0 7%;
+    margin-top: 50px;
+    background-color: #f8f8f8
 }
 
 .news-logo-saratoga{
@@ -370,9 +388,29 @@ nav ul {
     width: 10px;
 }
 
+.news-page-read-more{
+    color: black;
+    text-transform: uppercase;
+    font-size: 22px;
+    margin: 0 10px 0 10px;
+}
+
+.news-page-block{
+    margin-bottom: 40px;
+    box-shadow: 0px 0px 30px #d0cccc;
+    background-color: white;
+    padding: 55px;
+}
+
 .news-read-more-ornament{
     width: 40px;
     height: 13px;
+}
+
+.news-page-read-more-ornament{
+    width: 60px;
+    height: 23px;
+    margin-bottom: 7px;
 }
 /*******************************************/
 

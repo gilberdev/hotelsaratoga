@@ -18,7 +18,9 @@ def history(request):
 
 def news(request):
     """ Default view for the news """
-    return render(request, 'base/news.html')
+
+    news_lst = New.objects.order_by('date').all()
+    return render(request, 'base/news.html', {'news': news_lst})
 
 def hotels(request):
     """ Default view for the hotels """

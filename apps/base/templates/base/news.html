@@ -1,41 +1,45 @@
 {% extends 'base.html' %}
+{% load base_extras %}
 
 {% block content %}
 
     {# Hotels #}
-     <div style="margin-left: 7%; margin-right: 7%; margin-top: 50px; background-color: #f8f8f8">
-        <div class="row">
-            <p class="text-center" style="color: black;
-                             font-size: 35px;
-                             text-transform: uppercase;">
-                <img src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament.png">
-                <span style="border-bottom-style: solid;
-                             border-top-style: solid;
-                             border-bottom-color: #d3bc78;
-                             border-top-color: #d3bc78;">
+     <div class="background-news-page">
+        <div class="row news-row-title">
+            <p class="text-center">
+                <img class="news-page-title-ornamet" src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament.png">
+                <span class="news-title news-title-borders">
                     news
                 </span>
-                <img src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament2.png">
+                <img class="news-page-title-ornamet" src="{{ STATIC_URL }}img/Other Hotels/Gold Ornament2.png">
             </p>
         </div>
 
-        <div class="row" style="background-color: white; padding: 10px;">
-            <p style="font-size: 48px; color: black; text-transform: capitalize;">
-                This is the title for the first post in the News Section
-            </p>
-            <p style="font-size: 36px; color: #4a4a4a">This is the subtitle for the first post</p>
-            <p style="font-size: 20px; color: #d4bd79">By Marcel Fernández. September 24, 2015. 20:30PM</p>
-            <p style="font-size: 20px; border-top-style: solid; border-top-color: #979797">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra.</p>
-            <div id="demo" class="collapse">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra.
+        {% for i in news %}
+            <div class="row news-page-block">
+                <p style="font-size: 43px; color: black; font-family: 'TimesNewRomanPSMT'; margin-bottom: 0px;">
+                    {{ i.title }}
+                </p>
+                <p style="font-size: 32px; color: #4a4a4a; font-family: 'TimesNewRomanPSMT'; margin-bottom: 0px;">{{ i.subtitle }}</p>
+                {% if i.image %}
+                    <div>
+                        <img class="img-responsive" style="margin: 10px 0 10px 0;" src="{{ i.image.url }}">
+                    </div>
+                {% endif %}
+                <p style="font-size: 22px; color: #d4bd79; font-family: 'TimesNewRomanPSMT';">By {{ i.author }}. {{ i.date|customize_date }}</p>
+                <p style="font-size: 18px; border-top-style: solid; border-top-width: 2px;  border-top-color: #979797; padding-top: 10px;">{{ i.corpus|first_paragraph }}</p>
+                <div id="{{ i.id }}" class="collapse">
+                    <p style="font-size: 18px;">
+                        {{ i.corpus }}
+                    </p>
+                </div>
+                <p class="text-center" style="text-transform: uppercase;">
+                    <img class="news-page-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
+                    <a data-toggle="collapse" class="news-page-read-more roman"  data-target="#{{ i.id }}">read more</a>
+                    <img class="news-page-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 5.png">
                 </p>
             </div>
-            <p class="text-center" style="text-transform: uppercase;">
-               <a data-toggle="collapse" data-target="#demo">read more</a>
-            </p>
-        </div>
-
+        {% endfor %}
      </div>
 
     {# Book #}
