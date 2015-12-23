@@ -707,6 +707,17 @@ nav ul {
 	transform: rotate(180deg);
 }
 
+.saratoga-logo-custom-dimensions{
+    width: 200px;
+    height: 150px;
+}
+
+.custom-book-know{
+    border-color: #d3bc79;
+    font-size: 26px;
+    border-width: 2px;
+}
+
 /*
 .center-table {
   display: table;
