@@ -52,3 +52,12 @@ class Polaroid(models.Model):
         size = (240, 240)
         image = image.resize(size, Image.ANTIALIAS)
         image.save(self.photo.path)
+
+
+class Facility(models.Model):
+    name = models.CharField(max_length=30)
+    description = models.TextField()
+    image = models.ImageField(upload_to='facilities_images')
+
+    def __str__(self):
+        return self.name
