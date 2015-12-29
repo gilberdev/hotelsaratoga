@@ -63,7 +63,13 @@ class Facility(models.Model):
         return self.name
 
 class General_Facility(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
 
 class SightSeen(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name

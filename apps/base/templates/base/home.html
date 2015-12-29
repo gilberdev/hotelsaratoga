@@ -459,26 +459,9 @@
                     <div id="two-columns-rooms" style="padding: 0;">
                         <ul class="unstyled" style="color: black; list-style-type: none; padding-left: 0;">
                             <b>
-                            <li>Accesible in seat of wheels</li>
-                            <li>Internet Access</li>
-                            <li>Air conditioning in Restaurant</li>
-                            <li>Air conditioning in common areas</li>
-                            <li>Elevators</li>
-                            <li>Box of security</li>
-                            <li>Money exchange</li>
-                            <li>Hall Reception</li>
-                            <li>Living room of conferences</li>
-                            <li>Bussiness center</li>
-                            <li>Room service</li>
-                            <li>Buerau of Tourism</li>
-                            <li>Rent Car</li>
-                            <li>Taxi Services</li>
-                            <li>Laundry Services</li>
-                            <li>Reception service 24 hours</li>
-                            <li>Medical services(low petition)</li>
-                            <li>Rooms for handicapped persons</li>
-                            <li>Area for non smokers in restaurant</li>
-                            <li>Area for smokers in restaurant</li>
+                                {% for i in general_facility_lst %}
+                                    <li>{{ i.name }}</li>
+                                {% endfor %}
                             </b>
                         </ul>
                     </div>
@@ -490,16 +473,9 @@
                     <br>
                     <ul style="color: black; list-style-type: none; padding-left: 0;">
                         <b>
-                        <li>Historic Centre</li>
-                        <li>National Capitoly</li>
-                        <li>National Museum of Fine Arts</li>
-                        <li>Grand Theatre of Havana</li>
-                        <li>Museum of the Revolution</li>
-                        <li>Partagás Tobacco Factory</li>
-                        <li>Home of the Habano</li>
-                        <li>Havanas Malecon</li>
-                        <li>Revolution Square</li>
-                        <li>National Library</li>
+                            {% for i in sightseen_lst %}
+                                <li>{{ i.name }}</li>
+                            {% endfor %}
                         </b>
                     </ul>
                 </div>
