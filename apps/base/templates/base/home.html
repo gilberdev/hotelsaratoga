@@ -413,30 +413,39 @@
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
               <!-- Indicators -->
               <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-                <li data-target="#myCarousel" data-slide-to="3"></li>
+                {% for i in facility_count %}
+                    {% if i == 0 %}
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    {% else %}
+                        <li data-target="#myCarousel" data-slide-to="{{ i }}"></li>
+                    {% endif %}
+                {% endfor %}
               </ol>
 
               <!-- Wrapper for slides -->
               <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                  <img src="{{ STATIC_URL }}img/Home/Facilities/background.png" alt="Pool">
+                    <div class="my-img-format" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.71) 0%, rgba(38, 25, 42, 0.2) 30%, rgba(0, 0, 0, 0.64) 100%),url('{{ facilities_list|first_item_background }}'),no-repeat;
+                                                    height: 600px;">
+                        <div style="color: white; position: absolute; bottom: 60px; padding-left: 80px;">
+                            <p class="roman" style="font-size: 36px;">{{ facilities_list|first_item_name }}</p>
+                            <p style="width:800px;">{{ facilities_list|first_item_description }}</p>
+                        </div>
+                      </div>
                 </div>
 
-                <div class="item">
-                  <img src="{{ STATIC_URL }}img/Home/Facilities/background.png" alt="Pool">
-                  <p>Que pasa si meto html dentro de un carrusel</p>
-                </div>
+                {% for i in facilities_list|rest_items %}
+                    <div class="item">
+                      <div class="my-img-format" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.71) 0%, rgba(38, 25, 42, 0.2) 30%, rgba(0, 0, 0, 0.64) 100%),url('{{ i.image.url }}'),no-repeat;
+                                                        height: 600px;">
+                        <div style="color: white; position: absolute; bottom: 60px; padding-left: 80px;">
+                            <p class="roman" style="font-size: 36px;">{{ i.name }}</p>
+                            <p style="width:800px;">{{ i.description }}</p>
+                        </div>
+                      </div>
+                    </div>
+                {% endfor %}
 
-                <div class="item">
-                  <img src="{{ STATIC_URL }}img/Home/Facilities/background.png" alt="Pool">
-                </div>
-
-                <div class="item">
-                  <img src="{{ STATIC_URL }}img/Home/Facilities/background.png" alt="Pool">
-                </div>
               </div>
             </div>
         </div>
