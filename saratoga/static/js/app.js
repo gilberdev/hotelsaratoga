@@ -1,8 +1,7 @@
-function same_height(id1, id2){
-    var elemet1 = '#'+id1;
-    var elemet2 = '#'+id2;
-    var height_text = $(elemet1).height();
-    var max_height = Math.max($(elemet1).height(), $(elemet2).height());
-    $(elemet1).height(max_height);
-    $(elemet2).height(max_height);
+function same_height_news(){
+    var h1 = $("#sub-news-area-left")[0].scrollHeight
+    var h2 = $("#sub-news-area-right")[0].scrollHeight
+    var h3 = Math.max(h1,h2);
+    $("#news-area-left").height(h3);
+    $("#news-area-right").height(h3);
 }

@@ -175,12 +175,16 @@
                         </div>
                         {% endif %}
                         <div class="news-area">
-                            <p class="news-header">
-                                {{ left_new.title }}
-                            </p>
-                            <p class="news-subheader">{{ left_new.subtitle }}</p>
-                            <p class="news-authorsip">By {{ left_new.author }}. {{ left_new.date|customize_date }}</p>
-                            <p class="no-margin-bottom limit-five-rows">{{ left_new.corpus }}</p>
+                            <div id="news-area-left">
+                                <div id="sub-news-area-left">
+                                    <p class="news-header">
+                                        {{ left_new.title }}
+                                    </p>
+                                    <p class="news-subheader">{{ left_new.subtitle }}</p>
+                                    <p class="news-authorsip">By {{ left_new.author }}. {{ left_new.date|customize_date }}</p>
+                                    <p class="no-margin-bottom limit-five-rows">{{ left_new.corpus }}</p>
+                                    </div>
+                                </div>
                             <p class="text-center news-body">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
                                 <a href="#" class="link-previous-news roman">Read More</a>
@@ -199,12 +203,16 @@
                         </div>
                         {% endif %}
                         <div class="news-area">
-                            <p class="news-header">
-                                {{ right_new.title }}
-                            </p>
-                            <p class="news-subheader">{{ right_new.subtitle }}</p>
-                            <p class="news-authorsip">By {{ right_new.author }}. {{ right_new.date|customize_date }}</p>
-                            <p class="no-margin-bottom limit-five-rows">{{ right_new.corpus }}</p>
+                            <div id="news-area-right">
+                                <div id="sub-news-area-right">
+                                    <p class="news-header">
+                                        {{ right_new.title }}
+                                    </p>
+                                    <p class="news-subheader">{{ right_new.subtitle }}</p>
+                                    <p class="news-authorsip">By {{ right_new.author }}. {{ right_new.date|customize_date }}</p>
+                                    <p class="no-margin-bottom limit-five-rows">{{ right_new.corpus }}</p>
+                                </div>
+                            </div>
                             <p class="text-center news-body">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
                                 <a href="#" class="link-previous-news roman">Read More</a>
@@ -778,20 +786,18 @@
     <script src="{% static 'js/ScatteredPolaroids/classie.js' %}"></script>
     <script src="{% static 'js/ScatteredPolaroids/photostack.js' %}"></script>
     <script>
+
     new Photostack( document.getElementById( 'photostack-1' ), {
 				callback : function( item ) {
 					//console.log(item)
 				}
 			} );
 
-
-    var h1 = $("#textrooms").height();
-    var h2 = $("#photo-rooms").height();
     $(document).ready(function() {
-        same_height('text-rooms', 'photo-rooms');
+        same_height_news();
     })
     $(window).resize(function() {
-        same_height('text-rooms', 'photo-rooms');
+        same_height_news();
     })
     </script>
 
@@ -874,6 +880,13 @@
         $($(this).attr('href'))[0].scrollIntoView();
         scrollBy(0, -offset);
     });
+    </script>
+
+    {# Resize #}
+    <script>
+        $(document).ready(function(){
+            var max_height = max($(news-area-left), $(news-area-right))
+        })
     </script>
 
 {% endblock %}
