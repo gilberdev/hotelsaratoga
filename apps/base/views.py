@@ -1,7 +1,7 @@
 """Views for the base app"""
 
 from django.shortcuts import render
-from .models import Hotel, Polaroid, New, Facility, General_Facility, SightSeen
+from .models import Hotel, Polaroid, New, Facility, General_Facility, SightSeen, Room, RoomPicture
 
 
 def home(request):
@@ -9,6 +9,8 @@ def home(request):
     polaroid_list = Polaroid.objects.all()
 
     (left_new, right_new) = New.objects.order_by('date')[:2]
+
+    room_list = Room.objects.all().order_by('room_name')
 
     facilities_list = Facility.objects.all()
     facility_count = range(0, len(facilities_list))
@@ -22,7 +24,8 @@ def home(request):
                                               'facilities_list': facilities_list,
                                               'facility_count': facility_count,
                                               'general_facility_lst': general_facility_lst,
-                                              'sightseen_lst': sightseen_lst})
+                                              'sightseen_lst': sightseen_lst,
+                                              'room_list': room_list})
 
 def history(request):
     """ Default view for the history """

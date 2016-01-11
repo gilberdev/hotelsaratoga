@@ -80,7 +80,7 @@ class SightSeen(models.Model):
 class Room(models.Model):
     room_name = models.CharField(max_length=30)
     room_description = models.TextField()
-    room_bottom_message = models.CharField(max_length=100)
+    room_bottom_message = models.TextField()
     room_picture = models.ImageField(upload_to="room_posters")
 
     def __str__(self):
