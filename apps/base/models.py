@@ -62,14 +62,51 @@ class Facility(models.Model):
     def __str__(self):
         return self.name
 
+
 class General_Facility(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
 
+
 class SightSeen(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
+
+
+class Room(models.Model):
+    room_name = models.CharField(max_length=30)
+    room_description = models.TextField()
+    room_bottom_message = models.CharField(max_length=100)
+    room_picture = models.ImageField(upload_to="room_posters")
+
+    def __str__(self):
+        return self.room_name
+
+
+class RoomPicture(models.Model):
+    room = models.ForeignKey(Room)
+    picture = models.ImageField(upload_to="rooms_gallery")
+    picture_description = models.TextField()
+
+    # def save(self):
+    #
+    #     if not self.id and not self.photo:
+    #         return
+    #
+    #     super(Polaroid, self).save()
+    #
+    #     image = Image.open(self.photo)
+    #     #(width, height) = image.size
+    #
+    #     #if (240 / width < 240 < height):
+    #     #    factor = 240.0 / height
+    #     #else:
+    #     #    factor = 240.0 / width
+    #
+    #     size = (240, 240)
+    #     image = image.resize(size, Image.ANTIALIAS)
+    #     image.save(self.photo.path)
