@@ -250,95 +250,35 @@
     {# Rooms #}
     <section id="rooms">
            <div id="owl-demo" class="owl-carousel owl-theme" style="color: white;">
-              <div class="item">
-                      <div class="row" style="background-color: black;margin-bottom: 0">
-                {#        <div class="table-row">#}
-                            <div class="col-sm-7" id="textrooms">
-                                <div class="row" id="two-columns-rooms" style="color: white;">
-                                    <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png'); background-size: 100% 100%; height: 50px;"></div>
-                                    <p style="text-transform: uppercase; font-size: 30px; text-align: center;">rooms</p>
-                                    <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png'); background-size: 100% 100%; height: 50px;"></div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
-                                    <p>Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus. Ut velit nibh, convallis at odio non, sodales euismod sapien. Morbi at libero ut nisi feugiat fringilla. Sed tincidunt urna at dolor lobortis, eu sodales lacus imperdiet. Phasellus vel aliquet metus. Ut ut felis sapien.</p>
+              {% for i in room_list %}
+                  <div class="item">
+                        <div class="row" style="background-color: black;margin-bottom: 0">
+                                <div class="col-sm-7" id="textrooms">
+                                    <div class="row" id="two-columns-rooms" style="color: white;">
+                                        <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png'); background-size: 100% 100%; height: 50px;"></div>
+                                        <p style="text-transform: uppercase; font-size: 30px; text-align: center;">{{ i.room_name }}</p>
+                                        <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png'); background-size: 100% 100%; height: 50px;"></div>
+                                        {{ i.room_description }}
+                                    </div>
+                                    <div class="row">
+                                        <div style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">{{ i.room_bottom_message }}</div>
+                                    </div>
                                 </div>
-                                <div class="row">
-                                    <p style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus.</p>
+                                <div class="col-sm-5 rooms" id="photo-rooms">
+                                    <button id="room-{{ i.id }}" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
+                                    background-color: transparent;
+                                    background-size: 100% 100%;
+                                    width: 80px;
+                                    height: 80px;
+                                    position: absolute;
+                                    right: 0;
+                                    bottom: 0;
+                                    border-style: none"></button>
                                 </div>
-                            </div>
-                            <div class="col-sm-5 rooms" id="photo-rooms">
-                                <button id="gallery-btn" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
-                                background-color: transparent;
-                                background-size: 100% 100%;
-                                width: 80px;
-                                height: 80px;
-                                position: absolute;
-                                right: 0;
-                                bottom: 0;
-                                border-style: none"></button>
-                            </div>
-                {#        </div>#}
-                    </div>
-              </div>
-              <div class="item">
-                    <div class="row" style="background-color: black;margin-bottom: 0">
-                {#        <div class="table-row">#}
-                            <div class="col-sm-7" id="textrooms">
-                                <div class="row" id="two-columns-rooms" style="color: white;">
-                                    <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png'); background-size: 100% 100%; height: 50px;"></div>
-                                    <p style="text-transform: uppercase; font-size: 30px; text-align: center;">rooms</p>
-                                    <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png'); background-size: 100% 100%; height: 50px;"></div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
-                                    <p>Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus. Ut velit nibh, convallis at odio non, sodales euismod sapien. Morbi at libero ut nisi feugiat fringilla. Sed tincidunt urna at dolor lobortis, eu sodales lacus imperdiet. Phasellus vel aliquet metus. Ut ut felis sapien.</p>
-                                </div>
-                                <div class="row">
-                                    <p style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus.</p>
-                                </div>
-                            </div>
-                    <div class="col-sm-5 rooms" id="photo-rooms" style="position: relative;">
-                        <button id="gallery-btn" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
-                                background-color: transparent;
-                                background-size: 100% 100%;
-                                width: 80px;
-                                height: 80px;
-                                position: absolute;
-                                right: 0;
-                                bottom: 0;
-                                border-style: none"></button>
-                    </div>
-                {#        </div>#}
-                    </div>
-              </div>
-              <div class="item">
-                    <div class="row" style="background-color: black;margin-bottom: 0">
-                {#        <div class="table-row">#}
-                            <div class="col-sm-7" id="textrooms">
-                                <div class="row" id="two-columns-rooms" style="color: white;">
-                                    <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png'); background-size: 100% 100%; height: 50px;"></div>
-                                    <p style="text-transform: uppercase; font-size: 30px; text-align: center;">rooms</p>
-                                    <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png'); background-size: 100% 100%; height: 50px;"></div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
-                                    <p>Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus. Ut velit nibh, convallis at odio non, sodales euismod sapien. Morbi at libero ut nisi feugiat fringilla. Sed tincidunt urna at dolor lobortis, eu sodales lacus imperdiet. Phasellus vel aliquet metus. Ut ut felis sapien.</p>
-                                </div>
-                                <div class="row">
-                                    <p style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">Cras quis gravida dolor. Pellentesque volutpat vulputate dui id faucibus. Integer tristique dui risus, nec volutpat ligula pretium a. Quisque ut lectus turpis. Aenean non rhoncus erat, id dignissim libero. Proin libero eros, euismod non lacus sed, ornare dictum libero. Nam varius ultricies imperdiet. Duis dignissim finibus cursus.</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-5 rooms" id="photo-rooms">
-                                <button id="gallery-btn-3" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
-                                background-color: transparent;
-                                background-size: 100% 100%;
-                                width: 80px;
-                                height: 80px;
-                                position: absolute;
-                                right: 0;
-                                bottom: 0;
-                                border-style: none"></button>
-                            </div>
 
-                {#        </div>#}
-                    </div>
-              </div>
-
+                        </div>
+                  </div>
+              {% endfor %}
            </div>
 
             <!--
@@ -895,9 +835,9 @@
         galleryElements[i].setAttribute('data-pswp-uid', i + 1);
     }
     //openPhotoSwipe();
-
-    document.getElementById('gallery-btn-3').onclick = openPhotoSwipe;
-
+    {% for i in room_list %}
+        document.getElementById('room-{{ i.id }}').onclick = openPhotoSwipe;
+    {% endfor %}
 
     var offset = 60;
 
