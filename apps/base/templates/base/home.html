@@ -89,14 +89,14 @@
                     {% for i in polaroids %}
                         {% if not i.dummy %}
                             <figure>
-                                <a href="" class="photostack-img"><img src="{{ i.photo.url }}"/></a>
+                                <a class="photostack-img" onclick="blablabla(this.id)"><img src="{{ i.photo.url }}"/></a>
                                 <figcaption>
                                     <h2 class="photostack-title">{{ i.caption }}</h2>
                                 </figcaption>
                             </figure>
                         {% else %}
                             <figure data-dummy>
-                            <a href="" class="photostack-img"><img src="{{ i.photo.url }}"/></a>
+                            <a class="photostack-img" onclick="blablabla(this.id)"><img src="{{ i.photo.url }}"/></a>
                             <figcaption>
                                 <h2 class="photostack-title">{{ i.caption }}</h2>
                             </figcaption>
@@ -104,48 +104,7 @@
                         {% endif %}
                     {% endfor %}
 
-                    <figure>
-                        <a href="http://goo.gl/fhwlSP" class="photostack-img"><img src="{{ STATIC_URL }}img/ScatteredPolaroids/2.jpg" alt="img02"/></a>
-                        <figcaption>
-                            <h2 class="photostack-title">Happy Days</h2>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <a href="http://goo.gl/Jmvr4u" class="photostack-img"><img src="{{ STATIC_URL }}img/ScatteredPolaroids/3.jpg" alt="img03"/></a>
-                        <figcaption>
-                            <h2 class="photostack-title">Beautywood</h2>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <a href="http://goo.gl/49lN3k" class="photostack-img"><img src="{{ STATIC_URL }}img/ScatteredPolaroids/4.jpg" alt="img04"/></a>
-                        <figcaption>
-                            <h2 class="photostack-title">Heaven of time</h2>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <a href="http://goo.gl/NJ1Dhf" class="photostack-img"><img src="{{ STATIC_URL }}img/ScatteredPolaroids/5.jpg" alt="img05"/></a>
-                        <figcaption>
-                            <h2 class="photostack-title">Speed Racer</h2>
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <a href="http://goo.gl/Ms7VDl" class="photostack-img"><img src="{{ STATIC_URL }}img/ScatteredPolaroids/6.jpg" alt="img06"/></a>
-                        <figcaption>
-                            <h2 class="photostack-title">Forever this</h2>
-                        </figcaption>
-                    </figure>
-                    <figure data-dummy>
-                        <a href="#" class="photostack-img"><img src="{{ STATIC_URL }}img/ScatteredPolaroids/7.jpg" alt="img07"/></a>
-                        <figcaption>
-                            <h2 class="photostack-title">Lovely Green</h2>
-                        </figcaption>
-                    </figure>
-                    <figure data-dummy>
-                        <a href="#" class="photostack-img"><img src="{{ STATIC_URL }}img/ScatteredPolaroids/8.jpg" alt="img08"/></a>
-                        <figcaption>
-                            <h2 class="photostack-title">Wonderful</h2>
-                        </figcaption>
-                    </figure>
+                 
                 </div>
             </div>
         </div>
@@ -265,7 +224,7 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-5 rooms" id="photo-rooms">
-                                    <button id="room-{{ i.id }}" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
+                                    <button id="room-{{ i.id }}" onclick="blablabla(this.id)" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
                                     background-color: transparent;
                                     background-size: 100% 100%;
                                     width: 80px;
@@ -797,6 +756,42 @@
 
     <script>
         var openPhotoSwipe = function() {
+
+            var pswpElement = document.querySelectorAll('.pswp')[0];
+
+            // build items array
+            var items = [
+                {
+                    src: 'https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg',
+                    w: 964,
+                    h: 1024
+                },
+                {
+                    src: 'https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg',
+                    w: 1024,
+                    h: 683
+                }
+            ];
+
+            // define options (if needed)
+            var options = {
+                     // history & focus options are disabled on CodePen
+                history: false,
+                focus: false,
+
+                showAnimationDuration: 0,
+                hideAnimationDuration: 0,
+                closeOnScroll: false,
+                fullscreenEl: true
+
+            };
+
+            var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+            gallery.init();
+        };
+
+    function blablabla(id) {
+        //alert(id);
         var pswpElement = document.querySelectorAll('.pswp')[0];
 
         // build items array
@@ -832,7 +827,7 @@
 
     //openPhotoSwipe();
     {% for i in room_list %}
-        document.getElementById('room-{{ i.id }}').onclick = openPhotoSwipe;
+    //    document.getElementById('room-{{ i.id }}').onclick = openPhotoSwipe;
     {% endfor %}
 
     var offset = 60;
