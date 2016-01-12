@@ -10,7 +10,12 @@ def home(request):
 
     (left_new, right_new) = New.objects.order_by('date')[:2]
 
-    room_list = Room.objects.all().order_by('room_name')
+    rooms_list = []
+    rooms = Room.objects.all().order_by('room_name')
+
+    for i in rooms:
+        gallery = RoomPicture.objects.filter(room=i.id).all()
+        rooms_list.append((i, gallery))
 
     facilities_list = Facility.objects.all()
     facility_count = range(0, len(facilities_list))
@@ -25,7 +30,7 @@ def home(request):
                                               'facility_count': facility_count,
                                               'general_facility_lst': general_facility_lst,
                                               'sightseen_lst': sightseen_lst,
-                                              'room_list': room_list})
+                                              'rooms_list': rooms_list})
 
 def history(request):
     """ Default view for the history """

@@ -89,14 +89,14 @@
                     {% for i in polaroids %}
                         {% if not i.dummy %}
                             <figure>
-                                <a class="photostack-img" onclick="blablabla(this.id)"><img src="{{ i.photo.url }}"/></a>
+                                <a class="photostack-img" onclick="activate_photoswipe(this.id)"><img src="{{ i.photo.url }}"/></a>
                                 <figcaption>
                                     <h2 class="photostack-title">{{ i.caption }}</h2>
                                 </figcaption>
                             </figure>
                         {% else %}
                             <figure data-dummy>
-                            <a class="photostack-img" onclick="blablabla(this.id)"><img src="{{ i.photo.url }}"/></a>
+                            <a class="photostack-img" onclick="activate_photoswipe(this.id)"><img src="{{ i.photo.url }}"/></a>
                             <figcaption>
                                 <h2 class="photostack-title">{{ i.caption }}</h2>
                             </figcaption>
@@ -104,7 +104,7 @@
                         {% endif %}
                     {% endfor %}
 
-                 
+
                 </div>
             </div>
         </div>
@@ -209,22 +209,22 @@
     {# Rooms #}
     <section id="rooms">
            <div id="owl-demo" class="owl-carousel owl-theme" style="color: white;">
-              {% for i in room_list %}
+              {% for room, gallery in rooms_list %}
                   <div class="item">
                         <div class="row" style="background-color: black;margin-bottom: 0">
                                 <div class="col-sm-7" id="textrooms">
                                     <div class="row" id="two-columns-rooms" style="color: white;">
                                         <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 6.png'); background-size: 100% 100%; height: 50px;"></div>
-                                        <p style="text-transform: uppercase; font-size: 30px; text-align: center;">{{ i.room_name }}</p>
+                                        <p style="text-transform: uppercase; font-size: 30px; text-align: center;">{{ room.room_name }}</p>
                                         <div style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gold Ornament 7.png'); background-size: 100% 100%; height: 50px;"></div>
-                                        {{ i.room_description }}
+                                        {{ room.room_description }}
                                     </div>
                                     <div class="row">
-                                        <div style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">{{ i.room_bottom_message }}</div>
+                                        <div style="text-align: center; color: #797977; padding-left: 10%; padding-right: 10%;">{{ room.room_bottom_message }}</div>
                                     </div>
                                 </div>
                                 <div class="col-sm-5 rooms" id="photo-rooms">
-                                    <button id="room-{{ i.id }}" onclick="blablabla(this.id)" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
+                                    <button id="room-{{ room.id }}" onclick="activate_photoswipe(this.id)" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
                                     background-color: transparent;
                                     background-size: 100% 100%;
                                     width: 80px;
@@ -234,29 +234,15 @@
                                     bottom: 0;
                                     border-style: none"></button>
                                 </div>
-
+                                <div id="gallery-{{ room.id }}-content">
+                                    {% for i in gallery %}
+                                        <img id="gallery-{{ room.id }}-content-{{ i.id }}" src="{{ i.picture.url }}" hidden>
+                                    {% endfor %}
+                                </div>
                         </div>
                   </div>
               {% endfor %}
            </div>
-
-            <!--
-            <div class="my-simple-gallery" tabindex="-1" role="dialog" aria-hidden="true">
-                {% for i in polaroids %}
-                    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"
-                        class="piece-box no-padding col-xs-12 col-sm-6 col-md-4 ">
-
-                        <a href="{{ MEDIA_URL }}{{ piece.image }}" itemprop="contentUrl">
-                            <img src="{{ i.photo.url }}" itemprop="thumbnail" class="img-responsive" alt="{{ piece.name }}"/>
-                        </a>
-                        <figcaption itemprop="caption description">
-                            {{ piece.name }} <br>
-                            {{ piece.description }}
-                        </figcaption>
-                    </figure>
-                {% endfor %}
-            </div>
-            -->
 
             <!-- Root element of PhotoSwipe. Must have class pswp. -->
             <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -790,10 +776,32 @@
             gallery.init();
         };
 
-    function blablabla(id) {
+    function activate_photoswipe(id) {
         //alert(id);
         var pswpElement = document.querySelectorAll('.pswp')[0];
 
+        var identifier = id.split("-");
+
+        if(identifier[0] == "room")
+            var selector = "#gallery-"+identifier[1]+"-content";
+
+        //alert(selector);
+        var my_items = $(selector + " img").map(function(){
+            //return {src: this.src, w: this.clientWidth, h: this.clientHeight};
+            alert(this.src);
+            alert(this.clientWidth);
+            alert(this.clientHeight);
+            return {src: this.src, w: this.naturalWidth, h: this.naturalHeight};
+        }).get();
+
+        alert(my_items);
+        var items = [];
+
+        console.log("Entrando a ver los tags recuperados");
+
+        for(var i= 0; i < my_items.length; i++){
+            alert(my_items[i]);
+        }
         // build items array
         var items = [
             {
@@ -821,8 +829,10 @@
 
         };
 
-        var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.init();
+        if(my_items.length > 0){
+            var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, my_items, options);
+            gallery.init();
+        }
     };
 
     //openPhotoSwipe();

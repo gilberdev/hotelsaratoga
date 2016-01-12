@@ -41,3 +41,7 @@ def first_item_name(l):
 @register.filter()
 def first_item_description(l):
     return l[0].description
+
+@register.filter()
+def return_item(d,i):
+    return d[i]
