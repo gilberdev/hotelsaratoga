@@ -236,7 +236,8 @@
                                 </div>
                                 <div id="gallery-{{ room.id }}-content">
                                     {% for i in gallery %}
-                                        <img id="gallery-{{ room.id }}-content-{{ i.id }}" src="{{ i.picture.url }}" hidden>
+                                        {{room.picture_description}}
+                                        <img id="gallery-{{ room.id }}-content-{{ i.id }}" src="{{ i.picture.url }}" hidden alt="{{ i.picture_description }}">
                                     {% endfor %}
                                 </div>
                         </div>
@@ -792,7 +793,7 @@
         //alert(selector);
         var my_items = $(selector + " img").map(function(){
             //return {src: this.src, w: this.clientWidth, h: this.clientHeight};
-            return {src: this.src, w: this.naturalWidth, h: this.naturalHeight};
+            return {src: this.src, w: this.naturalWidth, h: this.naturalHeight, title: this.alt};
         }).get();
 
         alert(my_items);
