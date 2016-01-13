@@ -89,14 +89,14 @@
                     {% for i in polaroids %}
                         {% if not i.dummy %}
                             <figure>
-                                <a class="photostack-img" onclick="activate_photoswipe(this.id)"><img src="{{ i.photo.url }}"/></a>
+                                <a class="photostack-img" onclick="activate_photoswipe('photostack-1')"><img src="{{ i.photo.url }}"/></a>
                                 <figcaption>
                                     <h2 class="photostack-title">{{ i.caption }}</h2>
                                 </figcaption>
                             </figure>
                         {% else %}
                             <figure data-dummy>
-                            <a class="photostack-img" onclick="activate_photoswipe(this.id)"><img src="{{ i.photo.url }}"/></a>
+                            <a class="photostack-img" onclick="activate_photoswipe('photostack-1')"><img src="{{ i.photo.url }}"/></a>
                             <figcaption>
                                 <h2 class="photostack-title">{{ i.caption }}</h2>
                             </figcaption>
@@ -782,15 +782,16 @@
 
         var identifier = id.split("-");
 
-        if(identifier[0] == "room")
+        if(identifier[0] == "room"){
             var selector = "#gallery-"+identifier[1]+"-content";
+        }
+        else{
+            var selector = "#photostack-1"
+        }
 
         //alert(selector);
         var my_items = $(selector + " img").map(function(){
             //return {src: this.src, w: this.clientWidth, h: this.clientHeight};
-            alert(this.src);
-            alert(this.clientWidth);
-            alert(this.clientHeight);
             return {src: this.src, w: this.naturalWidth, h: this.naturalHeight};
         }).get();
 
