@@ -742,27 +742,35 @@
     <script src="{% static "js/libs/classie.js" %}"></script>
 
     <script>
-        var openPhotoSwipe = function() {
 
+        function activate_photoswipe(id) {
+            //alert(id);
             var pswpElement = document.querySelectorAll('.pswp')[0];
 
-            // build items array
-            var items = [
-                {
-                    src: 'https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg',
-                    w: 964,
-                    h: 1024
-                },
-                {
-                    src: 'https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg',
-                    w: 1024,
-                    h: 683
-                }
-            ];
+            var identifier = id.split("-");
+
+            if(identifier[0] == "room"){
+                var selector = "#gallery-"+identifier[1]+"-content";
+            }
+            else{
+                var selector = "#photostack-1"
+            }
+
+            //alert(selector);
+            var my_items = $(selector + " img").map(function(){
+                return {src: this.src, w: this.naturalWidth, h: this.naturalHeight, title: this.alt};
+            }).get();
+
+            //alert(my_items);
+
+            //console.log("Entrando a ver los tags recuperados");
+
+            //for(var i= 0; i < my_items.length; i++){
+            //    alert(my_items[i]);
+            //}
 
             // define options (if needed)
             var options = {
-                     // history & focus options are disabled on CodePen
                 history: false,
                 focus: false,
 
@@ -773,82 +781,19 @@
 
             };
 
-            var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-            gallery.init();
-        };
-
-    function activate_photoswipe(id) {
-        //alert(id);
-        var pswpElement = document.querySelectorAll('.pswp')[0];
-
-        var identifier = id.split("-");
-
-        if(identifier[0] == "room"){
-            var selector = "#gallery-"+identifier[1]+"-content";
-        }
-        else{
-            var selector = "#photostack-1"
-        }
-
-        //alert(selector);
-        var my_items = $(selector + " img").map(function(){
-            //return {src: this.src, w: this.clientWidth, h: this.clientHeight};
-            return {src: this.src, w: this.naturalWidth, h: this.naturalHeight, title: this.alt};
-        }).get();
-
-        alert(my_items);
-        var items = [];
-
-        console.log("Entrando a ver los tags recuperados");
-
-        for(var i= 0; i < my_items.length; i++){
-            alert(my_items[i]);
-        }
-        // build items array
-        var items = [
-            {
-                src: 'https://farm2.staticflickr.com/1043/5186867718_06b2e9e551_b.jpg',
-                w: 964,
-                h: 1024
-            },
-            {
-                src: 'https://farm7.staticflickr.com/6175/6176698785_7dee72237e_b.jpg',
-                w: 1024,
-                h: 683
+            if(my_items.length > 0){
+                var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, my_items, options);
+                gallery.init();
             }
-        ];
-
-        // define options (if needed)
-        var options = {
-                 // history & focus options are disabled on CodePen
-            history: false,
-            focus: false,
-
-            showAnimationDuration: 0,
-            hideAnimationDuration: 0,
-            closeOnScroll: false,
-            fullscreenEl: true
-
         };
 
-        if(my_items.length > 0){
-            var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, my_items, options);
-            gallery.init();
-        }
-    };
+        var offset = 60;
 
-    //openPhotoSwipe();
-    {% for i in room_list %}
-    //    document.getElementById('room-{{ i.id }}').onclick = openPhotoSwipe;
-    {% endfor %}
-
-    var offset = 60;
-
-    $('.navbar li a').click(function(event) {
-        event.preventDefault();
-        $($(this).attr('href'))[0].scrollIntoView();
-        scrollBy(0, -offset);
-    });
+        $('.navbar li a').click(function(event) {
+            event.preventDefault();
+            $($(this).attr('href'))[0].scrollIntoView();
+            scrollBy(0, -offset);
+        });
     </script>
 
     {# Resize #}
