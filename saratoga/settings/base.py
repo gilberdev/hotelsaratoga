@@ -31,7 +31,9 @@ ALLOWED_HOSTS = []
 
 # https://docs.djangoproject.com/en/1.8/ref/settings/#installed-apps
 INSTALLED_APPS = [
-    #'flat',  # django-flat-theme must be BEFORE contrib.admin
+
+    # 'flat',  # django-flat-theme must be BEFORE contrib.admin
+
 
     # Django apps
     'django.contrib.admin',
@@ -101,7 +103,9 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # https://docs.djangoproject.com/en/1.8/ref/settings/#static-root
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'public/static')
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'public/static')
+#STATIC_ROOT = '/home/hotelsaratoga/projects/hotelsaratoga/saratoga/static/'
+STATIC_ROOT = '/var/www/hotelsaratoga.com/static/'
 
 # URL prefix for static files.
 # https://docs.djangoproject.com/en/1.8/ref/settings/#static-url
