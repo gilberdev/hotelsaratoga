@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base/navbar-page.html' %}
 {% load base_extras %}
 
 {% block content %}
@@ -16,7 +16,7 @@
         </div>
 
         {% for i in news %}
-            <div class="row news-page-block">
+            <div class="row news-page-block" id="news-block-{{ i.id }}">
                 <p style="font-size: 43px; color: black; font-family: 'TimesNewRomanPSMT'; margin-bottom: 0px;">
                     {{ i.title }}
                 </p>
@@ -44,7 +44,7 @@
          <div class="row row-previous-news-page">
                     <p class="text-left">
                         <img class="previous-news-link-ornament" src="{{ STATIC_URL }}img/News/disclosure.png">
-                        <a class="link-previous-news" href="{% url 'news' %}">back to recent news</a>
+                        <a class="link-previous-news" href="{% url 'home' %}">back to recent news</a>
                     </p>
         </div>
      </div>
@@ -72,4 +72,21 @@
         </div>
     </section>
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function expandNewOnTop(id){
+        $('html,body').animate({scrollTop: $('#news-block-'+id).offset().top - 60});
+        $('#'+id).collapse('show');
+    }
+
+    $(document).ready(function(){
+        //alert({{ id }});
+        if({{ id }})
+        {
+            expandNewOnTop({{ id }});
+        }
+    })
+</script>
 {% endblock %}
