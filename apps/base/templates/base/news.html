@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base/navbar-page.html' %}
 {% load base_extras %}
 
 {% block content %}
@@ -77,7 +77,7 @@
 {% block scripts %}
 <script>
     function expandNewOnTop(id){
-        $('html,body').animate({scrollTop: $('#news-block-'+id).offset().top - 50});
+        $('html,body').animate({scrollTop: $('#news-block-'+id).offset().top - 60});
         $('#'+id).collapse('show');
     }
 

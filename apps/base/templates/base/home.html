@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base/navbar-scroll.html' %}
 {% load static %}
 {% load base_extras %}
 
@@ -146,7 +146,7 @@
                                 </div>
                             <p class="text-center news-body">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
-                                <a href="#" class="link-previous-news roman">Read More</a>
+                                <a href="/news{{ left_new.id }}" class="link-previous-news roman">Read More</a>
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 5.png">
                             </p>
                         </div>
@@ -174,7 +174,7 @@
                             </div>
                             <p class="text-center news-body">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
-                                <a href="#" class="link-previous-news roman">Read More</a>
+                                <a href="/news{{ right_new.id }}" class="link-previous-news roman">Read More</a>
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 5.png">
                             </p>
                         </div>
