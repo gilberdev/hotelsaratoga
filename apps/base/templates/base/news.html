@@ -16,7 +16,7 @@
         </div>
 
         {% for i in news %}
-            <div class="row news-page-block">
+            <div class="row news-page-block" id="news-block-{{ i.id }}">
                 <p style="font-size: 43px; color: black; font-family: 'TimesNewRomanPSMT'; margin-bottom: 0px;">
                     {{ i.title }}
                 </p>
@@ -72,4 +72,21 @@
         </div>
     </section>
 
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function expandNewOnTop(id){
+        $('html,body').animate({scrollTop: $('#news-block-'+id).offset().top});
+        $('#'+id).collapse('show');
+    }
+
+    $(document).ready(function(){
+        //alert({{ id }});
+        if({{ id }})
+        {
+            expandNewOnTop({{ id }});
+        }
+    })
+</script>
 {% endblock %}
