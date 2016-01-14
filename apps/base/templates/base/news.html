@@ -77,7 +77,7 @@
 {% block scripts %}
 <script>
     function expandNewOnTop(id){
-        $('html,body').animate({scrollTop: $('#news-block-'+id).offset().top});
+        $('html,body').animate({scrollTop: $('#news-block-'+id).offset().top - 50});
         $('#'+id).collapse('show');
     }
 
