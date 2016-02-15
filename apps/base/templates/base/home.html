@@ -209,7 +209,7 @@
     {# Rooms #}
     <section id="rooms">
            <div id="owl-demo" class="owl-carousel owl-theme" style="color: white;">
-              {% for room, gallery in rooms_list %}
+              {% for room, gallery, available in rooms_list %}
                   <div class="item">
                         <div class="row" style="background-color: black;margin-bottom: 0">
                                 <div class="col-sm-7" id="textrooms">
@@ -224,15 +224,17 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-5 rooms" id="photo-rooms">
-                                    <button id="room-{{ room.id }}" onclick="activate_photoswipe(this.id)" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
-                                    background-color: transparent;
-                                    background-size: 100% 100%;
-                                    width: 80px;
-                                    height: 80px;
-                                    position: absolute;
-                                    right: 0;
-                                    bottom: 0;
-                                    border-style: none"></button>
+                                    {% if available %}
+                                        <button id="room-{{ room.id }}" onclick="activate_photoswipe(this.id)" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
+                                        background-color: transparent;
+                                        background-size: 100% 100%;
+                                        width: 80px;
+                                        height: 80px;
+                                        position: absolute;
+                                        right: 0;
+                                        bottom: 0;
+                                        border-style: none"></button>
+                                    {% endif %}
                                 </div>
                                 <div id="gallery-{{ room.id }}-content">
                                     {% for i in gallery %}

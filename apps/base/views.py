@@ -15,7 +15,7 @@ def home(request):
 
     for i in rooms:
         gallery = RoomPicture.objects.filter(room=i.id).all()
-        rooms_list.append((i, gallery))
+        rooms_list.append((i, gallery, len(gallery) > 0))
 
     facilities_list = Facility.objects.all()
     facility_count = range(0, len(facilities_list))
