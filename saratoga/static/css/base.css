@@ -530,9 +530,15 @@ margin-top: -10px;
 }
 .owl-prev {
 left: 0;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
 }
 .owl-next {
 right: 0;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
 }
 
 .owl-theme .owl-controls{
