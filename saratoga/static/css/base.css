@@ -450,6 +450,15 @@ nav ul {
     }
 }
 
+.page-history-text-area{
+        background-image: url('../img/Home/History/old_paper.png');
+        /*background-repeat: no-repeat;
+        background-position: left top;*/
+        background-size: 100% 100%;
+        margin: 0 10% 0 10%;
+        padding: 5% 0 0 10%;
+        text-align: left;
+    }
 
 .history-title{
     font-size:43px;
@@ -457,6 +466,19 @@ nav ul {
     text-align: right;
     color: white;
     text-transform: uppercase;
+}
+
+.page-history-title{
+    font-size:53px;
+    width: 100%;
+    color: black;
+    text-transform: uppercase;
+}
+
+.page-history-last-paragraph{
+    background-image: url('../img/Home/History/saratoga.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
 }
 
 .history-img-ornament{

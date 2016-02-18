@@ -1,7 +1,7 @@
 """Views for the base app"""
 
 from django.shortcuts import render
-from .models import Hotel, Polaroid, New, Facility, General_Facility, SightSeen, Room, RoomPicture
+from .models import Hotel, Polaroid, New, Facility, General_Facility, SightSeen, Room, RoomPicture, History
 
 
 def home(request):
@@ -9,6 +9,8 @@ def home(request):
     polaroid_list = Polaroid.objects.all()
 
     (left_new, right_new) = New.objects.order_by('date')[:2]
+
+    history_text = History.objects.first().history_text
 
     rooms_list = []
     rooms = Room.objects.all().order_by('room_name')
@@ -30,11 +32,15 @@ def home(request):
                                               'facility_count': facility_count,
                                               'general_facility_lst': general_facility_lst,
                                               'sightseen_lst': sightseen_lst,
-                                              'rooms_list': rooms_list})
+                                              'rooms_list': rooms_list,
+                                              'history_text': history_text})
 
 def history(request):
     """ Default view for the history """
-    return render(request, 'base/history.html')
+    history_text = History.objects.first().history_text.split('    ')
+    last_paragraph = history_text[-1]
+    return render(request, 'base/history.html', {'history_text': history_text[0:(len(history_text)-1)],
+                                                 'last_paragraph': history_text[-1]})
 
 def news(request, new_id=""):
     """ Default view for the news """
