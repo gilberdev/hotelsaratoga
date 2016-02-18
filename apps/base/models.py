@@ -110,3 +110,7 @@ class RoomPicture(models.Model):
     #     size = (240, 240)
     #     image = image.resize(size, Image.ANTIALIAS)
     #     image.save(self.photo.path)
+
+
+class History(models.Model):
+    history_text = models.TextField()
