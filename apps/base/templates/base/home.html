@@ -184,8 +184,10 @@
                 </div>
                 <div class="row row-previous-news">
                     <p class="text-right">
-                        <a class="link-previous-news" href="{% url 'news' %}">previous news</a>
-                        <img class="previous-news-link-ornament" src="{{ STATIC_URL }}img/Home/News/Disclosure.png">
+                        {% if show_previous_news %}
+                            <a class="link-previous-news" href="/news{{ next_new }}">previous news</a>
+                            <img class="previous-news-link-ornament" src="{{ STATIC_URL }}img/Home/News/Disclosure.png">
+                        {% endif %}
                     </p>
                 </div>
             </div>
@@ -194,11 +196,11 @@
 
     {# History #}
     <section id="history-sec">
-        <div class="row history my-img-format history-custom-background">
+        <div class="row history my-img-format history-custom-background" style="height: 1000px;">
             <div class="history-text-area">
                 <p class="title history-title" >history</p>
                 <p class="text-right">
-                    Toward 1933 on Prado street intersection with Dragones street was located Saratoga Hotel, it left behind its former location on Monte street, it stood the building where from then on is “Isla de Cuba Hotel”. The “new” building on Prado street was built by the Spaniard merchant Gregorio Palacios between 1879 and 1880 with the objective of lodging dwelling- houses, stores and boarding stores.
+                    {{ history_text }}
                 </p>
                 <p class="text-right">
                     <img class="history-img-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
@@ -364,7 +366,7 @@
               </div>
             </div>
         </div>
-        <div style="background-color: #f8f8f8;">
+        <div style="background-color: #f8f8f8; margin-bottom:15px;">
             <div class="row" style="margin-left: 10%; margin-right: 10%; padding-top: 30px">
                 <div class="col-sm-8" style="border-left: solid; border-left-color: #d3bc78;">
                     <p class="title" style="color: #d3bc78; margin: 0;">

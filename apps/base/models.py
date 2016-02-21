@@ -4,11 +4,12 @@ from PIL import Image
 
 
 class Hotel(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
     description = models.TextField(max_length=255)
     photo = models.ImageField(upload_to='hotel photos')
     stars = models.IntegerField()
+    url = models.TextField()
 
     def __str__(self):
         return self.name
@@ -21,6 +22,19 @@ class New(models.Model):
     date = models.DateTimeField()
     image = models.ImageField(upload_to='news photos', null=True)
     corpus = models.TextField()
+
+    def first_paragraph(self):
+        t = self.corpus.partition('    ')
+        return t[0]
+
+    def rest(self):
+        t = self.corpus.partition('    ')
+        return t[2]
+
+    def customize_date(self):
+        a = self.date.strftime('%B %d, %Y, %H:%M%p')
+        print a
+        return a
 
     def __str__(self):
         return self.title + " by " + self.author

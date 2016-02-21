@@ -22,7 +22,7 @@
         </div>
 
         {% for i in hotels %}
-
+        <a href="{{ i.url }}">
          <div class="row" style="margin-top: 25px; margin-bottom: 25px;">
              <div class="col-sm-3" style="background-color: white;">
                  <div>
@@ -41,7 +41,7 @@
                 <p style="margin-bottom: 5px; color: #4a4849;">{{ i.description }}</p>
              </div>
          </div>
-
+        </a>
          {% endfor %}
 
         <div class="row">

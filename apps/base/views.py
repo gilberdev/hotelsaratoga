@@ -8,9 +8,17 @@ def home(request):
     """ Default view for the root """
     polaroid_list = Polaroid.objects.all()
 
-    (left_new, right_new) = New.objects.order_by('date')[:2]
+    news_list = New.objects.order_by('date').all()
+    show_previous_news = False
+    new_id = ""
 
-    history_text = History.objects.first().history_text
+    if len(news_list) > 2:
+        show_previous_news = True
+        new_id = news_list[2].id
+
+    (left_new, right_new) = news_list[:2]
+
+    history_text = History.objects.first().history_text.split('    ')[0]
 
     rooms_list = []
     rooms = Room.objects.all().order_by('room_name')
@@ -28,6 +36,8 @@ def home(request):
     return render(request, 'base/home.html', {'polaroids': polaroid_list,
                                               'left_new': left_new,
                                               'right_new': right_new,
+                                              'next_new': new_id,
+                                              'show_previous_news': show_previous_news,
                                               'facilities_list': facilities_list,
                                               'facility_count': facility_count,
                                               'general_facility_lst': general_facility_lst,
@@ -44,8 +54,8 @@ def history(request):
 
 def news(request, new_id=""):
     """ Default view for the news """
-
     news_lst = New.objects.order_by('date').all()
+
     return render(request, 'base/news.html', {'news': news_lst,
                                               'id': new_id})
 

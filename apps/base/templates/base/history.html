@@ -35,13 +35,14 @@
             <div class="page-history-text-area">
                 <div style="padding-right: 10%">
                     <p class="title page-history-title" >history</p>
+                    <br>
                     {% for i in  history_text %}
-                        <p align="left">{{ i }}</p>
+                        <p align="left" style="font-size: 20px;">{{ i }}</p>
                         <br>
                     {% endfor %}
                 </div>
-                <div style="padding-right: 28px;" id="last-par">
-                    <p align="left" id="last-par-par">
+                <div style="padding-right: 35px;" id="last-par">
+                    <p align="left" id="last-par-par" style="height: 350px; font-size: 20px;" >
                         <img id="last-par-img" src="{{ STATIC_URL }}img/Home/History/saratoga.png" align="right" width="350px" height="350px">
                         {{ last_paragraph }}
                     </p>
@@ -49,11 +50,5 @@
             </div>
         </div>
     </section>
-
-    <script>
-        window.alert('hoola');
-        var h1 = $("#last-par-par")[0].scrollHeight
-        window.alert('h1');
-    </script>
 
 {% endblock %}
