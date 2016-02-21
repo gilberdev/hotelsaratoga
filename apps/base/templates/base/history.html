@@ -1,4 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'base/navbar-page.html' %}
+{% load static %}
+
+{% block page_title %}Saratoga History{% endblock %}
 
 {% block content %}
 
@@ -19,7 +22,7 @@
                     <p class="text-center">
                         <img class="rotate_hundred_eighty_degrees img-responsive only_center" src="{{ STATIC_URL }}img/News/Gold Ornament5.png">
                     </p>
-                    <p class="text-center thirty-px-margin-top"><a class="book-now-button roman custom-book-know" href="#">book now</a></p>
+                    <p class="text-center thirty-px-margin-top"><a class="book-now-button roman custom-book-know" href="https://www.cubaism.com/basket/hotel-rates.aspx?htlID=407&lngID=1">book now</a></p>
                 </div>
             </div>
         </div>
@@ -29,15 +32,21 @@
     {# History #}
     <section id="history-sec">
         <div class="row history my-img-format history-custom-background">
-            <div class="history-text-area">
-                <p class="title history-title" >history</p>
-                <p class="text-right">
-                    Toward 1933 on Prado street intersection with Dragones street was located Saratoga Hotel, it left behind its former location on Monte street, it stood the building where from then on is “Isla de Cuba Hotel”. The “new” building on Prado street was built by the Spaniard merchant Gregorio Palacios between 1879 and 1880 with the objective of lodging dwelling- houses, stores and boarding stores.
-                </p>
-                <p class="text-right">
-                    <img class="history-img-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
-                    <a class="history-page-link" href="{% url 'history' %}">Read More</a>
-                </p>
+            <div class="page-history-text-area">
+                <div style="padding-right: 10%">
+                    <p class="title page-history-title" >history</p>
+                    <br>
+                    {% for i in  history_text %}
+                        <p align="left" style="font-size: 20px;">{{ i }}</p>
+                        <br>
+                    {% endfor %}
+                </div>
+                <div style="padding-right: 35px;" id="last-par">
+                    <p align="left" id="last-par-par" style="height: 350px; font-size: 20px;" >
+                        <img id="last-par-img" src="{{ STATIC_URL }}img/Home/History/saratoga.png" align="right" width="350px" height="350px">
+                        {{ last_paragraph }}
+                    </p>
+                </div>
             </div>
         </div>
     </section>

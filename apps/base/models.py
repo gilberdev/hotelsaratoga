@@ -1,14 +1,16 @@
 """Base models"""
 from django.db import models
 from PIL import Image
+import copy
 
 
 class Hotel(models.Model):
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
     description = models.TextField(max_length=255)
     photo = models.ImageField(upload_to='hotel photos')
     stars = models.IntegerField()
+    url = models.TextField()
 
     def __str__(self):
         return self.name
@@ -22,6 +24,18 @@ class New(models.Model):
     image = models.ImageField(upload_to='news photos', null=True)
     corpus = models.TextField()
 
+    def first_paragraph(self):
+        t = self.corpus.partition('    ')
+        return t[0]
+
+    def rest(self):
+        t = self.corpus.partition('    ')
+        return t[2]
+
+    def customize_date(self):
+        a = self.date.strftime('%B %d, %Y, %H:%M%p')
+        return a
+
     def __str__(self):
         return self.title + " by " + self.author
 
@@ -29,29 +43,22 @@ class New(models.Model):
 class Polaroid(models.Model):
     caption = models.CharField(max_length=25)
     photo = models.ImageField(upload_to='polaroid photos')
+    short_photo = models.ImageField(upload_to='polaroid short photos', default=None, null=True, blank=True)
     dummy = models.BooleanField(default=False)
 
     def __str__(self):
         return self.caption
 
-    def save(self):
-
+    def save(self, *args, **kwargs):
         if not self.id and not self.photo:
             return
 
-        super(Polaroid, self).save()
+        super(Polaroid, self).save(*args, **kwargs)
 
-        image = Image.open(self.photo)
-        #(width, height) = image.size
-
-        #if (240 / width < 240 < height):
-        #    factor = 240.0 / height
-        #else:
-        #    factor = 240.0 / width
-
+        image = Image.open(self.short_photo)
         size = (240, 240)
         image = image.resize(size, Image.ANTIALIAS)
-        image.save(self.photo.path)
+        image.save(self.short_photo.path)
 
 
 class Facility(models.Model):
@@ -110,3 +117,7 @@ class RoomPicture(models.Model):
     #     size = (240, 240)
     #     image = image.resize(size, Image.ANTIALIAS)
     #     image.save(self.photo.path)
+
+
+class History(models.Model):
+    history_text = models.TextField()

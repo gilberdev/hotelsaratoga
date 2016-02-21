@@ -2,6 +2,8 @@
 {% load static %}
 {% load base_extras %}
 
+{% block page_title %}Saratoga Home{% endblock %}
+
 {% block styles %}
 
     {# Polaroid CSS #}
@@ -89,19 +91,33 @@
                     {% for i in polaroids %}
                         {% if not i.dummy %}
                             <figure>
-                                <a class="photostack-img" onclick="activate_photoswipe('photostack-1')"><img src="{{ i.photo.url }}"/></a>
+                                <a class="photostack-img" onclick="activate_photoswipe('photostack-2')"><img src="{{ i.short_photo.url }}"/></a>
                                 <figcaption>
                                     <h2 class="photostack-title">{{ i.caption }}</h2>
                                 </figcaption>
                             </figure>
                         {% else %}
                             <figure data-dummy>
-                            <a class="photostack-img" onclick="activate_photoswipe('photostack-1')"><img src="{{ i.photo.url }}"/></a>
+                            <a class="photostack-img" onclick="activate_photoswipe('photostack-2')"><img src="{{ i.short_photo.url }}"/></a>
                             <figcaption>
                                 <h2 class="photostack-title">{{ i.caption }}</h2>
                             </figcaption>
                         </figure>
                         {% endif %}
+                    {% endfor %}
+
+
+                </div>
+            </div>
+            <div id="photostack-2" class="photostack">
+                <div>
+                    {% for i in polaroids %}
+                        <figure>
+                            <a class="photostack-img" onclick="activate_photoswipe('photostack-1')"><img src="{{ i.photo.url }}"/></a>
+                            <figcaption>
+                                <h2 class="photostack-title">{{ i.caption }}</h2>
+                            </figcaption>
+                        </figure>
                     {% endfor %}
 
 
@@ -140,7 +156,7 @@
                                         {{ left_new.title }}
                                     </p>
                                     <p class="news-subheader">{{ left_new.subtitle }}</p>
-                                    <p class="news-authorsip">By {{ left_new.author }}. {{ left_new.date|customize_date }}</p>
+                                    <p class="news-authorsip">By {{ left_new.author }}. {{ left_new.customize_date }}</p>
                                     <p class="no-margin-bottom limit-five-rows">{{ left_new.corpus }}</p>
                                     </div>
                                 </div>
@@ -168,7 +184,7 @@
                                         {{ right_new.title }}
                                     </p>
                                     <p class="news-subheader">{{ right_new.subtitle }}</p>
-                                    <p class="news-authorsip">By {{ right_new.author }}. {{ right_new.date|customize_date }}</p>
+                                    <p class="news-authorsip">By {{ right_new.author }}. {{ right_new.customize_date }}</p>
                                     <p class="no-margin-bottom limit-five-rows">{{ right_new.corpus }}</p>
                                 </div>
                             </div>
@@ -182,8 +198,10 @@
                 </div>
                 <div class="row row-previous-news">
                     <p class="text-right">
-                        <a class="link-previous-news" href="{% url 'news' %}">previous news</a>
-                        <img class="previous-news-link-ornament" src="{{ STATIC_URL }}img/Home/News/Disclosure.png">
+                        {% if show_previous_news %}
+                            <a class="link-previous-news" href="/news{{ next_new }}">previous news</a>
+                            <img class="previous-news-link-ornament" src="{{ STATIC_URL }}img/Home/News/Disclosure.png">
+                        {% endif %}
                     </p>
                 </div>
             </div>
@@ -192,11 +210,11 @@
 
     {# History #}
     <section id="history-sec">
-        <div class="row history my-img-format history-custom-background">
+        <div class="row history my-img-format history-custom-background" style="height: 1000px;">
             <div class="history-text-area">
                 <p class="title history-title" >history</p>
                 <p class="text-right">
-                    Toward 1933 on Prado street intersection with Dragones street was located Saratoga Hotel, it left behind its former location on Monte street, it stood the building where from then on is “Isla de Cuba Hotel”. The “new” building on Prado street was built by the Spaniard merchant Gregorio Palacios between 1879 and 1880 with the objective of lodging dwelling- houses, stores and boarding stores.
+                    {{ history_text }}
                 </p>
                 <p class="text-right">
                     <img class="history-img-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
@@ -209,7 +227,7 @@
     {# Rooms #}
     <section id="rooms">
            <div id="owl-demo" class="owl-carousel owl-theme" style="color: white;">
-              {% for room, gallery in rooms_list %}
+              {% for room, gallery, available in rooms_list %}
                   <div class="item">
                         <div class="row" style="background-color: black;margin-bottom: 0">
                                 <div class="col-sm-7" id="textrooms">
@@ -224,15 +242,17 @@
                                     </div>
                                 </div>
                                 <div class="col-sm-5 rooms" id="photo-rooms">
-                                    <button id="room-{{ room.id }}" onclick="activate_photoswipe(this.id)" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
-                                    background-color: transparent;
-                                    background-size: 100% 100%;
-                                    width: 80px;
-                                    height: 80px;
-                                    position: absolute;
-                                    right: 0;
-                                    bottom: 0;
-                                    border-style: none"></button>
+                                    {% if available %}
+                                        <button id="room-{{ room.id }}" onclick="activate_photoswipe(this.id)" style="background-image: url('{{ STATIC_URL }}img/Home/Rooms/Gallery Icon.png');
+                                        background-color: transparent;
+                                        background-size: 100% 100%;
+                                        width: 80px;
+                                        height: 80px;
+                                        position: absolute;
+                                        right: 0;
+                                        bottom: 0;
+                                        border-style: none"></button>
+                                    {% endif %}
                                 </div>
                                 <div id="gallery-{{ room.id }}-content">
                                     {% for i in gallery %}
@@ -360,7 +380,7 @@
               </div>
             </div>
         </div>
-        <div style="background-color: #f8f8f8;">
+        <div style="background-color: #f8f8f8; margin-bottom:15px;">
             <div class="row" style="margin-left: 10%; margin-right: 10%; padding-top: 30px">
                 <div class="col-sm-8" style="border-left: solid; border-left-color: #d3bc78;">
                     <p class="title" style="color: #d3bc78; margin: 0;">
@@ -395,104 +415,104 @@
     </section>
 
     {# Reviews #}
-    <section id="reviews-sec">
-        <div class="row" style="background-color: #f8f8f8;">
-            <p class="text-center" style="margin-top: 35px;">
-                <img src="{{ STATIC_URL }}img/Home/Reviews/Golden Ornament.png">
-            </p>
-        </div>
-        <div class="row" style="background-color: white; margin-left: 10%; margin-right: 10%; margin-top: 10px; margin-bottom: 30px;
-        padding-top: 20px; padding-bottom: 20px; padding-right: 10%; padding-left: 10%; border-style: outset;">
-            <div class="col-sm-12">
-                <div class="row" style="background-color: white;">
-                    <p class="text-center" style="text-transform: uppercase;">
-                        <img src="{{ STATIC_URL }}img/Home/Reviews/CheckMark.png">
-                        reviews
-                    </p>
-                </div>
-                <div class="row spaced-row">
-                    <div class="col-sm-2 big-circle" style="margin-bottom: 10px; color: #d3bc78;">
-                        <p style="text-align: center; margin-bottom: 0; font-size: 55px;">5</p>
-                        <p style="text-align: center; margin-bottom: 0; font-size: 20px; margin-top: -17px;">of 10</p>
-                    </div>
-                    <div class="col-sm-10">
-                        <div class="row">
-                            <div class="col-sm-4" style="padding-left: 0">
-                                <p style="color: #d3bc78">By Marcel Fernandez.</p>
-                            </div>
-                            <div class="col-sm-5" style="padding-left: 0">
-                                <p style="color: #9b9b9b;">September 24, 2015. 20:30PM</p>
-                            </div>
-                            <div class="col-sm-3" style="padding-left: 0">
-                                <p style="text-transform: uppercase;">
-                                    <img style="width: 33px; height: 12px;" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
-                                    read more
-                                </p>
-                            </div>
-                        </div>
-                        <p class="limit-tree-rows">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>
-                    </div>
-                </div>
-                <div class="row spaced-row">
-                    <div class="col-sm-2 big-circle" style="margin-bottom: 10px; color: #d3bc78;">
-                        <p style="text-align: center; margin-bottom: 0; font-size: 55px;">5</p>
-                        <p style="text-align: center; margin-bottom: 0; font-size: 20px; margin-top: -17px;">of 10</p>
-                    </div>
-                    <div class="col-sm-10">
-                        <div class="row">
-                            <div class="col-sm-4" style="padding-left: 0">
-                                <p style="color: #d3bc78">By Marcel Fernandez.</p>
-                            </div>
-                            <div class="col-sm-5" style="padding-left: 0">
-                                <p style="color: #9b9b9b;">September 24, 2015. 20:30PM</p>
-                            </div>
-                            <div class="col-sm-3" style="padding-left: 0">
-                                <p style="text-transform: uppercase;">
-                                    <img style="width: 33px; height: 12px;" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
-                                    read more
-                                </p>
-                            </div>
-                        </div>
-                        <p class="limit-tree-rows">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor</p>
-                    </div>
-                </div>
-                <div class="row spaced-row">
-                    <div class="col-sm-2 big-circle" style="margin-bottom: 10px; color: #d3bc78;">
-                        <p style="text-align: center; margin-bottom: 0; font-size: 55px;">5</p>
-                        <p style="text-align: center; margin-bottom: 0; font-size: 20px; margin-top: -17px;">of 10</p>
-                    </div>
-                    <div class="col-sm-10">
-                        <div class="row">
-                            <div class="col-sm-4" style="padding-left: 0">
-                                <p style="color: #d3bc78">By Marcel Fernandez.</p>
-                            </div>
-                            <div class="col-sm-5" style="padding-left: 0">
-                                <p style="color: #9b9b9b;">September 24, 2015. 20:30PM</p>
-                            </div>
-                            <div class="col-sm-3" style="padding-left: 0">
-                                <p style="text-transform: uppercase;">
-                                    <img style="width: 33px; height: 12px;" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
-                                    read more
-                                </p>
-                            </div>
-                        </div>
-                        <p class="limit-tree-rows">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.
-                            <a style="color: #d3bc78; text-transform: capitalize;" href="#"> read more...</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="row upper-more-spaced-row">
-                    <div class="col-sm-6">
-                        <a href="#" class="confort-button" style="float: right;">write a review</a>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="#" class="confort-button" style="float: left;">more reviews</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+{#    <section id="reviews-sec">#}
+{#        <div class="row" style="background-color: #f8f8f8;">#}
+{#            <p class="text-center" style="margin-top: 35px;">#}
+{#                <img src="{{ STATIC_URL }}img/Home/Reviews/Golden Ornament.png">#}
+{#            </p>#}
+{#        </div>#}
+{#        <div class="row" style="background-color: white; margin-left: 10%; margin-right: 10%; margin-top: 10px; margin-bottom: 30px;#}
+{#        padding-top: 20px; padding-bottom: 20px; padding-right: 10%; padding-left: 10%; border-style: outset;">#}
+{#            <div class="col-sm-12">#}
+{#                <div class="row" style="background-color: white;">#}
+{#                    <p class="text-center" style="text-transform: uppercase;">#}
+{#                        <img src="{{ STATIC_URL }}img/Home/Reviews/CheckMark.png">#}
+{#                        reviews#}
+{#                    </p>#}
+{#                </div>#}
+{#                <div class="row spaced-row">#}
+{#                    <div class="col-sm-2 big-circle" style="margin-bottom: 10px; color: #d3bc78;">#}
+{#                        <p style="text-align: center; margin-bottom: 0; font-size: 55px;">5</p>#}
+{#                        <p style="text-align: center; margin-bottom: 0; font-size: 20px; margin-top: -17px;">of 10</p>#}
+{#                    </div>#}
+{#                    <div class="col-sm-10">#}
+{#                        <div class="row">#}
+{#                            <div class="col-sm-4" style="padding-left: 0">#}
+{#                                <p style="color: #d3bc78">By Marcel Fernandez.</p>#}
+{#                            </div>#}
+{#                            <div class="col-sm-5" style="padding-left: 0">#}
+{#                                <p style="color: #9b9b9b;">September 24, 2015. 20:30PM</p>#}
+{#                            </div>#}
+{#                            <div class="col-sm-3" style="padding-left: 0">#}
+{#                                <p style="text-transform: uppercase;">#}
+{#                                    <img style="width: 33px; height: 12px;" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">#}
+{#                                    read more#}
+{#                                </p>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <p class="limit-tree-rows">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="row spaced-row">#}
+{#                    <div class="col-sm-2 big-circle" style="margin-bottom: 10px; color: #d3bc78;">#}
+{#                        <p style="text-align: center; margin-bottom: 0; font-size: 55px;">5</p>#}
+{#                        <p style="text-align: center; margin-bottom: 0; font-size: 20px; margin-top: -17px;">of 10</p>#}
+{#                    </div>#}
+{#                    <div class="col-sm-10">#}
+{#                        <div class="row">#}
+{#                            <div class="col-sm-4" style="padding-left: 0">#}
+{#                                <p style="color: #d3bc78">By Marcel Fernandez.</p>#}
+{#                            </div>#}
+{#                            <div class="col-sm-5" style="padding-left: 0">#}
+{#                                <p style="color: #9b9b9b;">September 24, 2015. 20:30PM</p>#}
+{#                            </div>#}
+{#                            <div class="col-sm-3" style="padding-left: 0">#}
+{#                                <p style="text-transform: uppercase;">#}
+{#                                    <img style="width: 33px; height: 12px;" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">#}
+{#                                    read more#}
+{#                                </p>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <p class="limit-tree-rows">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor</p>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="row spaced-row">#}
+{#                    <div class="col-sm-2 big-circle" style="margin-bottom: 10px; color: #d3bc78;">#}
+{#                        <p style="text-align: center; margin-bottom: 0; font-size: 55px;">5</p>#}
+{#                        <p style="text-align: center; margin-bottom: 0; font-size: 20px; margin-top: -17px;">of 10</p>#}
+{#                    </div>#}
+{#                    <div class="col-sm-10">#}
+{#                        <div class="row">#}
+{#                            <div class="col-sm-4" style="padding-left: 0">#}
+{#                                <p style="color: #d3bc78">By Marcel Fernandez.</p>#}
+{#                            </div>#}
+{#                            <div class="col-sm-5" style="padding-left: 0">#}
+{#                                <p style="color: #9b9b9b;">September 24, 2015. 20:30PM</p>#}
+{#                            </div>#}
+{#                            <div class="col-sm-3" style="padding-left: 0">#}
+{#                                <p style="text-transform: uppercase;">#}
+{#                                    <img style="width: 33px; height: 12px;" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">#}
+{#                                    read more#}
+{#                                </p>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <p class="limit-tree-rows">#}
+{#                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod ex at felis rutrum cursus. Nullam iaculis lectus in facilisis viverra. Ut dictum nulla et ullamcorper sagittis. Proin porttitor accumsan lectus. Nullam faucibus arcu aliquet orci auctor, ut vulputate diam viverra. Integer in bibendum arcu. Etiam sagittis pharetra nisl, ut efficitur sapien. Pellentesque egestas non magna et facilisis. Suspendisse elementum, eros sed aliquam pretium, ipsum dui malesuada lacus, tincidunt laoreet lacus urna eu ligula. Vivamus iaculis est non mauris vehicula, eu finibus sem euismod. Mauris nulla enim, porta at volutpat elementum, porttitor eu purus. Maecenas imperdiet tellus ligula, id finibus tortor vestibulum at. Ut tincidunt, dolor et condimentum porta, ipsum ligula fringilla erat, at convallis lorem felis id nulla. Phasellus nec facilisis diam. Cras aliquam elementum nulla, ut ultricies magna volutpat quis.#}
+{#                            <a style="color: #d3bc78; text-transform: capitalize;" href="#"> read more...</a>#}
+{#                        </p>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="row upper-more-spaced-row">#}
+{#                    <div class="col-sm-6">#}
+{#                        <a href="#" class="confort-button" style="float: right;">write a review</a>#}
+{#                    </div>#}
+{#                    <div class="col-sm-6">#}
+{#                        <a href="#" class="confort-button" style="float: left;">more reviews</a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
 
     {# Booking Area #}
     <section id="online-reservations-sec">
@@ -512,7 +532,7 @@
                     <img class="ornament-text" src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament2.png">
                 </p>
                 <p class="text-center book-now-message"><b> If you like this hotel you can make an online reservation in Cubaism.com <br> for more info make a reservation: </b></p>
-                <p class="text-center thirty-px-margin-top"><a class="book-now-button" href="#">book now</a></p>
+                <p class="text-center thirty-px-margin-top"><a class="book-now-button" href="https://www.cubaism.com/basket/hotel-rates.aspx?htlID=407&lngID=1">book now</a></p>
             </div>
 
             <div class="row">
@@ -717,8 +737,8 @@
           singleItem:true,
           pagination:false,
           navigationText: [
-          "<i class='icon-chevron-left icon-white'><</i>",
-          "<i class='icon-chevron-right icon-white'>></i>"
+          "<i class='glyphicon glyphicon-chevron-left icon-white' style='font-size:25px;'></i>",
+          "<i class='glyphicon glyphicon-chevron-right' style='font-size:25px;color:black;'></i>"
           ],
 
           // "singleItem:true" is a shortcut for:
@@ -753,7 +773,7 @@
                 var selector = "#gallery-"+identifier[1]+"-content";
             }
             else{
-                var selector = "#photostack-1"
+                var selector = "#photostack-2"
             }
 
             //alert(selector);

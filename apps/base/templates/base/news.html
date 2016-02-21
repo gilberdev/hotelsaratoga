@@ -1,9 +1,11 @@
 {% extends 'base/navbar-page.html' %}
 {% load base_extras %}
 
+{% block page_title %}Saratoga News{% endblock %}
+
 {% block content %}
 
-    {# Hotels #}
+    {# News #}
      <div class="background-news-page">
         <div class="row news-row-title">
             <p class="text-center">
@@ -26,11 +28,11 @@
                         <img class="img-responsive" style="margin: 10px 0 10px 0;" src="{{ i.image.url }}">
                     </div>
                 {% endif %}
-                <p style="font-size: 22px; color: #d4bd79; font-family: 'TimesNewRomanPSMT';">By {{ i.author }}. {{ i.date|customize_date }}</p>
-                <p style="font-size: 18px; border-top-style: solid; border-top-width: 2px;  border-top-color: #979797; padding-top: 10px;">{{ i.corpus|first_paragraph }}</p>
+                <p style="font-size: 22px; color: #d4bd79; font-family: 'TimesNewRomanPSMT';">By {{ i.author }}. {{ i.customize_date }}</p>
+                <p style="font-size: 18px; border-top-style: solid; border-top-width: 2px;  border-top-color: #979797; padding-top: 10px;">{{ i.first_paragraph }}</p>
                 <div id="{{ i.id }}" class="collapse">
                     <p style="font-size: 18px;">
-                        {{ i.corpus }}
+                        {{ i.rest }}
                     </p>
                 </div>
                 <p class="text-center" style="text-transform: uppercase;">
@@ -44,7 +46,7 @@
          <div class="row row-previous-news-page">
                     <p class="text-left">
                         <img class="previous-news-link-ornament" src="{{ STATIC_URL }}img/News/disclosure.png">
-                        <a class="link-previous-news" href="{% url 'home' %}">back to recent news</a>
+                        <a class="link-previous-news" href="{% url 'home' %}">back to home</a>
                     </p>
         </div>
      </div>
@@ -66,7 +68,7 @@
                     <p class="text-center">
                         <img class="rotate_hundred_eighty_degrees img-responsive only_center" src="{{ STATIC_URL }}img/News/Gold Ornament5.png">
                     </p>
-                    <p class="text-center thirty-px-margin-top"><a class="book-now-button roman custom-book-know" href="#">book now</a></p>
+                    <p class="text-center thirty-px-margin-top"><a class="book-now-button roman custom-book-know" href="https://www.cubaism.com/basket/hotel-rates.aspx?htlID=407&lngID=1">book now</a></p>
                 </div>
             </div>
         </div>

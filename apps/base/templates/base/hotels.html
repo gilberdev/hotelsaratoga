@@ -1,5 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'base/navbar-page.html' %}
 {% load base_extras %}
+
+{% block page_title %}Other Hotels{% endblock %}
 
 {% block content %}
 
@@ -20,7 +22,7 @@
         </div>
 
         {% for i in hotels %}
-
+        <a href="{{ i.url }}">
          <div class="row" style="margin-top: 25px; margin-bottom: 25px;">
              <div class="col-sm-3" style="background-color: white;">
                  <div>
@@ -39,7 +41,7 @@
                 <p style="margin-bottom: 5px; color: #4a4849;">{{ i.description }}</p>
              </div>
          </div>
-
+        </a>
          {% endfor %}
 
         <div class="row">
@@ -64,7 +66,7 @@
                     <p class="text-center">
                         <img class="rotate_hundred_eighty_degrees img-responsive only_center" src="{{ STATIC_URL }}img/News/Gold Ornament5.png">
                     </p>
-                    <p class="text-center thirty-px-margin-top"><a class="book-now-button roman custom-book-know" href="#">book now</a></p>
+                    <p class="text-center thirty-px-margin-top"><a class="book-now-button roman custom-book-know" href="https://www.cubaism.com/basket/hotel-rates.aspx?htlID=407&lngID=1">book now</a></p>
                 </div>
             </div>
         </div>

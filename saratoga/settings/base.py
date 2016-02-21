@@ -75,7 +75,7 @@ INTERNAL_IPS = ('127.0.0.1')
 ## LOCALE SETTINGS
 # Local time zone for this installation.
 # https://docs.djangoproject.com/en/1.8/ref/settings/#time-zone
-TIME_ZONE = 'America/Los_Angeles'
+TIME_ZONE = 'America/Havana'
 
 # https://docs.djangoproject.com/en/1.8/ref/settings/#language-code
 LANGUAGE_CODE = 'en-us'
