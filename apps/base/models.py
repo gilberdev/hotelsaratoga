@@ -1,6 +1,7 @@
 """Base models"""
 from django.db import models
 from PIL import Image
+import copy
 
 
 class Hotel(models.Model):
@@ -42,29 +43,22 @@ class New(models.Model):
 class Polaroid(models.Model):
     caption = models.CharField(max_length=25)
     photo = models.ImageField(upload_to='polaroid photos')
+    short_photo = models.ImageField(upload_to='polaroid short photos', default=None, null=True, blank=True)
     dummy = models.BooleanField(default=False)
 
     def __str__(self):
         return self.caption
 
-    def save(self):
-
+    def save(self, *args, **kwargs):
         if not self.id and not self.photo:
             return
 
-        super(Polaroid, self).save()
+        super(Polaroid, self).save(*args, **kwargs)
 
-        image = Image.open(self.photo)
-        #(width, height) = image.size
-
-        #if (240 / width < 240 < height):
-        #    factor = 240.0 / height
-        #else:
-        #    factor = 240.0 / width
-
+        image = Image.open(self.short_photo)
         size = (240, 240)
         image = image.resize(size, Image.ANTIALIAS)
-        image.save(self.photo.path)
+        image.save(self.short_photo.path)
 
 
 class Facility(models.Model):

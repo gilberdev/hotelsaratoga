@@ -91,19 +91,33 @@
                     {% for i in polaroids %}
                         {% if not i.dummy %}
                             <figure>
-                                <a class="photostack-img" onclick="activate_photoswipe('photostack-1')"><img src="{{ i.photo.url }}"/></a>
+                                <a class="photostack-img" onclick="activate_photoswipe('photostack-2')"><img src="{{ i.short_photo.url }}"/></a>
                                 <figcaption>
                                     <h2 class="photostack-title">{{ i.caption }}</h2>
                                 </figcaption>
                             </figure>
                         {% else %}
                             <figure data-dummy>
-                            <a class="photostack-img" onclick="activate_photoswipe('photostack-1')"><img src="{{ i.photo.url }}"/></a>
+                            <a class="photostack-img" onclick="activate_photoswipe('photostack-2')"><img src="{{ i.short_photo.url }}"/></a>
                             <figcaption>
                                 <h2 class="photostack-title">{{ i.caption }}</h2>
                             </figcaption>
                         </figure>
                         {% endif %}
+                    {% endfor %}
+
+
+                </div>
+            </div>
+            <div id="photostack-2" class="photostack">
+                <div>
+                    {% for i in polaroids %}
+                        <figure>
+                            <a class="photostack-img" onclick="activate_photoswipe('photostack-1')"><img src="{{ i.photo.url }}"/></a>
+                            <figcaption>
+                                <h2 class="photostack-title">{{ i.caption }}</h2>
+                            </figcaption>
+                        </figure>
                     {% endfor %}
 
 
@@ -759,7 +773,7 @@
                 var selector = "#gallery-"+identifier[1]+"-content";
             }
             else{
-                var selector = "#photostack-1"
+                var selector = "#photostack-2"
             }
 
             //alert(selector);

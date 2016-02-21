@@ -12,3 +12,6 @@ admin.site.register(SightSeen)
 admin.site.register(Room)
 admin.site.register(RoomPicture)
 admin.site.register(History)
+
+
+
