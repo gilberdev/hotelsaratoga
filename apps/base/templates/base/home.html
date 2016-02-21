@@ -109,19 +109,12 @@
 
                 </div>
             </div>
-            <div id="photostack-2" class="photostack">
-                <div>
+            <div id="photostack-2" class="photostack" style="display: none;">
                     {% for i in polaroids %}
-                        <figure>
+                        <figure style="display: none;">
                             <a class="photostack-img" onclick="activate_photoswipe('photostack-1')"><img src="{{ i.photo.url }}"/></a>
-                            <figcaption>
-                                <h2 class="photostack-title">{{ i.caption }}</h2>
-                            </figcaption>
                         </figure>
                     {% endfor %}
-
-
-                </div>
             </div>
         </div>
     </section>
