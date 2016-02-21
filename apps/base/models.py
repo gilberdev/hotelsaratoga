@@ -33,7 +33,6 @@ class New(models.Model):
 
     def customize_date(self):
         a = self.date.strftime('%B %d, %Y, %H:%M%p')
-        print a
         return a
 
     def __str__(self):
