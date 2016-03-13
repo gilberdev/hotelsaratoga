@@ -333,46 +333,24 @@
                 <img src="{{ STATIC_URL }}img/Home/Facilities/Gold Ornament 2.png" style="padding-bottom: 8px;">
             </p>
         </div>
-        <div class="row" style="border-top: solid; border-top-color: #d3bc78;">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                {% for i in facility_count %}
-                    {% if i == 0 %}
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    {% else %}
-                        <li data-target="#myCarousel" data-slide-to="{{ i }}"></li>
-                    {% endif %}
-                {% endfor %}
-              </ol>
 
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <div class="my-img-format" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.71) 0%, rgba(38, 25, 42, 0.2) 30%, rgba(0, 0, 0, 0.64) 100%),url('{{ facilities_list|first_item_background }}'),no-repeat;
-                                                    height: 600px;">
-                        <div style="color: white; position: absolute; bottom: 60px; padding-left: 80px;">
-                            <p class="roman" style="font-size: 36px;">{{ facilities_list|first_item_name }}</p>
-                            <p style="width:800px;">{{ facilities_list|first_item_description }}</p>
-                        </div>
-                      </div>
-                </div>
-
-                {% for i in facilities_list|rest_items %}
+        <div id="owl-demo-2" class="owl-carousel owl-theme" style="color: white;">
+              {% for i in facilities_list %}
                     <div class="item">
+                    <div class="row">
                       <div class="my-img-format" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.71) 0%, rgba(38, 25, 42, 0.2) 30%, rgba(0, 0, 0, 0.64) 100%),url('{{ i.image.url }}'),no-repeat;
                                                         height: 600px;">
                         <div style="color: white; position: absolute; bottom: 60px; padding-left: 80px;">
+                          <div class="col-sm-12">
                             <p class="roman" style="font-size: 36px;">{{ i.name }}</p>
-                            <p style="width:800px;">{{ i.description }}</p>
+                            <p style="padding-right: 30%;">{{ i.description }}</p>
                         </div>
+                          </div>
                       </div>
                     </div>
+                    </div>
                 {% endfor %}
-
-              </div>
-            </div>
-        </div>
+           </div>
         <div style="background-color: #f8f8f8; margin-bottom:15px;">
             <div class="row" style="margin-left: 10%; margin-right: 10%; padding-top: 30px">
                 <div class="col-sm-8" style="border-left: solid; border-left-color: #d3bc78;">
@@ -406,6 +384,8 @@
             </div>
         </div>
     </section>
+
+
 
     {# Reviews #}
 {#    <section id="reviews-sec">#}
@@ -730,8 +710,28 @@
           singleItem:true,
           pagination:false,
           navigationText: [
-          "<i class='glyphicon glyphicon-chevron-left icon-white' style='font-size:25px;'></i>",
-          "<i class='glyphicon glyphicon-chevron-right' style='font-size:25px;color:black;'></i>"
+          "<i class='glyphicon glyphicon-chevron-left icon-white' style='font-size:25px;color:#D6BD4D;'></i>",
+          "<i class='glyphicon glyphicon-chevron-right' style='font-size:25px;color:black;color:#D6BD4D;'></i>"
+          ],
+
+          // "singleItem:true" is a shortcut for:
+          // items : 1,
+          // itemsDesktop : false,
+          // itemsDesktopSmall : false,
+          // itemsTablet: false,
+          // itemsMobile : false
+
+      });
+      $("#owl-demo-2").owlCarousel({
+
+          navigation : true, // Show next and prev buttons
+          slideSpeed : 300,
+          paginationSpeed : 400,
+          singleItem:true,
+          pagination:false,
+          navigationText: [
+          "<i class='glyphicon glyphicon-chevron-left icon-white' style='font-size:25px;color:#D6BD4D;'></i>",
+          "<i class='glyphicon glyphicon-chevron-right' style='font-size:25px;color:#D6BD4D;'></i>"
           ],
 
           // "singleItem:true" is a shortcut for:
