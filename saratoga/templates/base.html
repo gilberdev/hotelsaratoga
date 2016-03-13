@@ -36,10 +36,10 @@
     <![endif]-->
 </head>
 
-<body data-target=".navbar" data-offset="50">
+<body data-target=".navbar" data-offset="50" style="padding-top: 0;">
 {% block body %}
 
-  <nav class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom: 0;">
+  <nav class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom: 0; position: static;">
     <div class="container-fluid" style="background-color: black;">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -66,7 +66,7 @@
 {#  <div class= "container-fluid footer-color">#}
       <div class="row nopadding black">
           <div class="row center-middle">
-              <p class="text-center"><img src="{% static 'img/Home/Footer/logo-footer.png' %}" class="cubaism"></p>
+              <p class="text-center"><a href="http://www.cubaism.com"><img src="{% static 'img/Home/Footer/logo-footer.png' %}" class="cubaism"></a></p>
           </div>
           <div class="row center-middle">
               <p class="text-center"><img src="{% static 'img/Home/Footer/Gold-Ornament.png' %}" class="logo"></p>
