@@ -219,6 +219,112 @@ nav ul {
     font-size: 22px;
 }
 
+@media (max-width: 766px) {
+    .selective-hide{
+
+    }
+}
+
+@media (min-width: 767px) {
+    .selective-hide{
+        display: none;
+    }
+}
+
+@media (max-width: 338px) {
+    .selective-hide-news{
+
+    }
+}
+
+@media (min-width: 339px) {
+    .selective-hide-news{
+        display: none;
+    }
+}
+
+@media (max-width: 308px) {
+    .selective-hide-book{
+
+    }
+}
+
+@media (min-width: 309px) {
+    .selective-hide-book{
+        display: none;
+    }
+}
+
+@media (max-width: 943px) {
+    .selective-hide-hotel-ornament{
+
+    }
+}
+
+@media (min-width: 944px) {
+    .selective-hide-hotel-ornament{
+        display: none;
+    }
+}
+
+@media (max-width: 1229px) {
+    .selective-hide-star{
+
+    }
+}
+
+@media (min-width: 1230px) {
+    .selective-hide-star{
+        display: none;
+    }
+}
+
+@media (max-width: 631px) {
+    .selective-hide-facilities{
+
+    }
+}
+
+@media (min-width: 632px) {
+    .selective-hide-facilities{
+        display: none;
+    }
+}
+
+@media (max-width: 457px) {
+    .facility-body-section{
+        color: white;
+        position: absolute;
+        bottom: 5px;
+    }
+
+    .facility-body{
+        padding: 0 20px 0 25px;
+    }
+
+    .facility-body-title{
+        padding-left: 20px;
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 458px) {
+    .facility-body-section{
+        color: white;
+        position: absolute;
+        bottom: 60px;
+        padding-left: 80px;
+    }
+
+    .facility-body{
+        padding-right: 30%;
+    }
+
+    .facility-body-title{
+        font-size: 36px;
+    }
+}
+
 /*******************************************/
 
 
@@ -742,10 +848,10 @@ border-radius: 0;
 }
 
 /*Phone*/
-@media (max-width: 575px){
+@media (max-width: 575px) {
     .online-reservation{
         font-family: 'TimesNewRomanPSMT' ;
-        line-height: 59px;
+        /*line-height: 59px;*/
         text-transform: uppercase;
         color: white;
         font-size: 18px;

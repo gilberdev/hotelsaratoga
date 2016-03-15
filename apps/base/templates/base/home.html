@@ -34,7 +34,9 @@
             <div class="row">
                 <p class="text-center hotel-logo">
                     <img src="{{ STATIC_URL }}img/Home/HeaderAndMessage/Gold Ornament1.png">
+                    <br class="selective-hide">
                     a rich and colorfull heritage close to the delights of old havana
+                    <br class="selective-hide">
                     <img src="{{ STATIC_URL }}img/Home/HeaderAndMessage/Gold Ornament2.png">
                 </p>
             </div>
@@ -155,7 +157,9 @@
                                 </div>
                             <p class="text-center news-body">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
+                                <br class="selective-hide-news">
                                 <a href="/news{{ left_new.id }}" class="link-previous-news roman">Read More</a>
+                                <br class="selective-hide-news">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 5.png">
                             </p>
                         </div>
@@ -183,7 +187,9 @@
                             </div>
                             <p class="text-center news-body">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
+                                <br class="selective-hide-news">
                                 <a href="/news{{ right_new.id }}" class="link-previous-news roman">Read More</a>
+                                <br class="selective-hide-news">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 5.png">
                             </p>
                         </div>
@@ -329,7 +335,9 @@
         <div class="row" style="position: absolute;z-index: 12;color: white; width:100%; text-align:center;">
             <p class="title" style="margin-bottom: 0; text-transform: uppercase; color: white; margin-top: 35px;">
                 <img src="{{ STATIC_URL }}img/Home/Facilities/Gold Ornament.png" style="padding-bottom: 8px;">
+                <br class="selective-hide-facilities">
                 hotel facilities
+                <br class="selective-hide-facilities">
                 <img src="{{ STATIC_URL }}img/Home/Facilities/Gold Ornament 2.png" style="padding-bottom: 8px;">
             </p>
         </div>
@@ -340,10 +348,10 @@
                     <div class="row">
                       <div class="my-img-format" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.71) 0%, rgba(38, 25, 42, 0.2) 30%, rgba(0, 0, 0, 0.64) 100%),url('{{ i.image.url }}'),no-repeat;
                                                         height: 600px;">
-                        <div style="color: white; position: absolute; bottom: 60px; padding-left: 80px;">
+                        <div class="facility-body-section" style="">
                           <div class="col-sm-12">
-                            <p class="roman" style="font-size: 36px;">{{ i.name }}</p>
-                            <p style="padding-right: 30%;">{{ i.description }}</p>
+                            <p class="roman facility-body-title" style="">{{ i.name }}</p>
+                            <p class="facility-body" style="">{{ i.description }}</p>
                         </div>
                           </div>
                       </div>
@@ -501,7 +509,7 @@
             <div class="col-sm-12">
                 <p class="text-center online-reservation">
                     <img class="ornament-text" src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament1.png">
-                    online reservation
+                    <br class="selective-hide-book">online reservation<br class="selective-hide-book">
                     <img class="ornament-text" src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament2.png">
                 </p>
                 <p class="text-center book-now-message"><b> If you like this hotel you can make an online reservation in Cubaism.com <br> for more info make a reservation: </b></p>
