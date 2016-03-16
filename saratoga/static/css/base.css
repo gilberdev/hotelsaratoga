@@ -199,7 +199,7 @@ nav ul {
 }
 
 .my-page-header{
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.8) 85%, rgba(0, 0, 0, 2) 100%),url('../img/Home/HeaderAndMessage/background.png');
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.8) 85%, rgba(0, 0, 0, 2) 100%),url('../img/Home/HeaderAndMessage/background.png') center top;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -334,13 +334,13 @@ nav ul {
 
 /****************** Intro ******************/
 .intro{
-    background: url('../img/Home/Hotel%20Saratoga%20Intro/background.png') center;
+    background: url('../img/Home/Hotel%20Saratoga%20Intro/background.png') center top;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     /*background-size: 100% 100%;*/
-    height: 400px;
+    height: 500px;
 }
 
 .gallery{
@@ -448,9 +448,11 @@ nav ul {
 }
 
 .photo-format{
-    background-size: 100% 100%;
-    width: 100%;
-    height: 300px;
+    /*background-size: 100% 100%;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .photo-format-empty{
@@ -570,7 +572,11 @@ nav ul {
 /**************** History ******************/
 .history{
     /*height: 1000px*/
-    background-image: url('../img/Home/History/background.png');
+    background: url('../img/Home/History/background.png') center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     color: black;
 }
 
@@ -644,7 +650,11 @@ nav ul {
 
 /******************* Rooms *****************/
 .rooms{
-    background-image: url('../img/Home/Rooms/Capitol%20View%20Image.png');
+    background: url('../img/Home/Rooms/Capitol%20View%20Image.png') center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height: 600px;
 
     background-repeat: no-repeat;
@@ -783,7 +793,11 @@ border-radius: 0;
 
 /******************* Book Now **************/
 .booking{
-    background-image: url('../img/Home/Book-Now/background.png');
+    background: url('../img/Home/Book-Now/background.png') center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .booking-alternative{

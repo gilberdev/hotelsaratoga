@@ -136,8 +136,13 @@
                 <div class="row">
                     <div class="col-sm-6 new-left">
                         {% if left_new.image %}
-                        <div>
-                            <img class="photo-format nopadding" src="{{ left_new.image.url }}">
+                        <div class="photo-format nopadding" style="background: url('{{ left_new.image.url }}') center center no-repeat;
+                                height: 300px;
+                                -webkit-background-size: cover;
+                                -moz-background-size: cover;
+                                -o-background-size: cover;
+                                background-size: cover;">
+
                         </div>
                         {% else %}
                         <div class="news-empty-photo">
@@ -166,8 +171,12 @@
                     </div>
                     <div class="col-sm-6 new-right">
                         {% if right_new.image %}
-                        <div>
-                            <img class="photo-format nopadding" src="{{ right_new.image.url }}">
+                        <div class="photo-format nopadding" style="background: url('{{ right_new.image.url }}') center center no-repeat;
+                                -webkit-background-size: cover;
+                                -moz-background-size: cover;
+                                -o-background-size: cover;
+                                background-size: cover;
+                                height: 300px;">
                         </div>
                         {% else %}
                         <div class="news-empty-photo">
@@ -346,8 +355,12 @@
               {% for i in facilities_list %}
                     <div class="item">
                     <div class="row">
-                      <div class="my-img-format" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.71) 0%, rgba(38, 25, 42, 0.2) 30%, rgba(0, 0, 0, 0.64) 100%),url('{{ i.image.url }}'),no-repeat;
-                                                        height: 600px;">
+                      <div class="my-img-format" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.71) 0%, rgba(38, 25, 42, 0.2) 30%, rgba(0, 0, 0, 0.64) 100%),url('{{ i.image.url }}'), center;
+                                -webkit-background-size: cover;
+                                -moz-background-size: cover;
+                                -o-background-size: cover;
+                                background-size: cover;
+                                height: 600px;">
                         <div class="facility-body-section" style="">
                           <div class="col-sm-12">
                             <p class="roman facility-body-title" style="">{{ i.name }}</p>
