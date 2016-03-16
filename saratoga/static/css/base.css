@@ -402,11 +402,51 @@ nav ul {
     border-color: #d3bc78;
 }
 
-.news-page-title-ornamet{
+@media (min-width: 518px){
+    .news-page-hide-br{
+        display: none;
+    }
+    .news-page-title-ornamet{
     width: 150px;
     height: 55px;
     margin-bottom: 21px;
 }
+}
+@media (max-width: 517px){
+    .news-page-hide-br{
+
+    }
+    .news-page-title-ornamet{
+    width: 150px;
+    height: 55px;
+}
+}
+
+@media (min-width: 465px){
+    .news-page-hide-br-rm{
+        display: none;
+    }
+
+    .news-page-read-more-ornament{
+    width: 60px;
+    height: 23px;
+    margin-bottom: 7px;
+}
+
+}
+
+@media (max-width: 464px){
+    .news-page-hide-br-rm{
+
+    }
+
+    .news-page-read-more-ornament{
+    width: 60px;
+    height: 23px;
+}
+
+}
+
 
 .news-row-title{
     margin-bottom: 20px;
@@ -561,11 +601,6 @@ nav ul {
     height: 13px;
 }
 
-.news-page-read-more-ornament{
-    width: 60px;
-    height: 23px;
-    margin-bottom: 7px;
-}
 /*******************************************/
 
 
@@ -801,7 +836,11 @@ border-radius: 0;
 }
 
 .booking-alternative{
-    background-image: url('../img/Home/Book-Now/Footer%20+%20Rectangle%2031%20Copy.png');
+    background: url('../img/Home/Book-Now/Footer%20+%20Rectangle%2031%20Copy.png') center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
 }
 
