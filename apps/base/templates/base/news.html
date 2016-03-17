@@ -27,7 +27,7 @@
                 <p style="font-size: 32px; color: #4a4a4a; font-family: 'TimesNewRomanPSMT'; margin-bottom: 0px;">{{ i.subtitle }}</p>
                 {% if i.image %}
                     <div>
-                        <img class="img-responsive" style="margin: 10px 0 10px 0;" src="{{ i.image.url }}">
+                        <img class="img-responsive" style="margin: 10px 0 10px 0; width: 100%; height: auto;" src="{{ i.image.url }}">
                     </div>
                 {% endif %}
                 <p style="font-size: 22px; color: #d4bd79; font-family: 'TimesNewRomanPSMT';">By {{ i.author }}. {{ i.customize_date }}</p>
