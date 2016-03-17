@@ -287,11 +287,19 @@ nav ul {
     .selective-hide-facilities{
 
     }
+
+    .facility-carousel-title-ornament{
+
+    }
 }
 
 @media (min-width: 632px) {
     .selective-hide-facilities{
         display: none;
+    }
+
+    .facility-carousel-title-ornament{
+        padding-bottom: 8px;
     }
 }
 
