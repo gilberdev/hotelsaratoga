@@ -34,7 +34,9 @@
             <div class="row">
                 <p class="text-center hotel-logo">
                     <img src="{{ STATIC_URL }}img/Home/HeaderAndMessage/Gold Ornament1.png">
+                    <br class="selective-hide">
                     a rich and colorfull heritage close to the delights of old havana
+                    <br class="selective-hide">
                     <img src="{{ STATIC_URL }}img/Home/HeaderAndMessage/Gold Ornament2.png">
                 </p>
             </div>
@@ -134,8 +136,13 @@
                 <div class="row">
                     <div class="col-sm-6 new-left">
                         {% if left_new.image %}
-                        <div>
-                            <img class="photo-format nopadding" src="{{ left_new.image.url }}">
+                        <div class="photo-format nopadding" style="background: url('{{ left_new.image.url }}') center center no-repeat;
+                                height: 300px;
+                                -webkit-background-size: cover;
+                                -moz-background-size: cover;
+                                -o-background-size: cover;
+                                background-size: cover;">
+
                         </div>
                         {% else %}
                         <div class="news-empty-photo">
@@ -155,15 +162,21 @@
                                 </div>
                             <p class="text-center news-body">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
-                                <a href="hotelsaratoga/news{{ left_new.id }}" class="link-previous-news roman">Read More</a>
+                                <br class="selective-hide-news">
+                                <a href="/news{{ left_new.id }}" class="link-previous-news roman">Read More</a>
+                                <br class="selective-hide-news">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 5.png">
                             </p>
                         </div>
                     </div>
                     <div class="col-sm-6 new-right">
                         {% if right_new.image %}
-                        <div>
-                            <img class="photo-format nopadding" src="{{ right_new.image.url }}">
+                        <div class="photo-format nopadding" style="background: url('{{ right_new.image.url }}') center center no-repeat;
+                                -webkit-background-size: cover;
+                                -moz-background-size: cover;
+                                -o-background-size: cover;
+                                background-size: cover;
+                                height: 300px;">
                         </div>
                         {% else %}
                         <div class="news-empty-photo">
@@ -183,7 +196,9 @@
                             </div>
                             <p class="text-center news-body">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 4.png">
-                                <a href="/hotelsaratoga/news{{ right_new.id }}" class="link-previous-news roman">Read More</a>
+                                <br class="selective-hide-news">
+                                <a href="/news{{ right_new.id }}" class="link-previous-news roman">Read More</a>
+                                <br class="selective-hide-news">
                                 <img class="news-read-more-ornament" src="{{ STATIC_URL }}img/Home/News/Gold Ornament 5.png">
                             </p>
                         </div>
@@ -328,51 +343,35 @@
     <section id="facilities-sec">
         <div class="row" style="position: absolute;z-index: 12;color: white; width:100%; text-align:center;">
             <p class="title" style="margin-bottom: 0; text-transform: uppercase; color: white; margin-top: 35px;">
-                <img src="{{ STATIC_URL }}img/Home/Facilities/Gold Ornament.png" style="padding-bottom: 8px;">
+                <img src="{{ STATIC_URL }}img/Home/Facilities/Gold Ornament.png" class="facility-carousel-title-ornament">
+                <br class="selective-hide-facilities">
                 hotel facilities
-                <img src="{{ STATIC_URL }}img/Home/Facilities/Gold Ornament 2.png" style="padding-bottom: 8px;">
+                <br class="selective-hide-facilities">
+                <img src="{{ STATIC_URL }}img/Home/Facilities/Gold Ornament 2.png" class="facility-carousel-title-ornament">
             </p>
         </div>
-        <div class="row" style="border-top: solid; border-top-color: #d3bc78;">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                {% for i in facility_count %}
-                    {% if i == 0 %}
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    {% else %}
-                        <li data-target="#myCarousel" data-slide-to="{{ i }}"></li>
-                    {% endif %}
-                {% endfor %}
-              </ol>
 
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner" role="listbox">
-                <div class="item active">
-                    <div class="my-img-format" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.71) 0%, rgba(38, 25, 42, 0.2) 30%, rgba(0, 0, 0, 0.64) 100%),url('{{ facilities_list|first_item_background }}'),no-repeat;
-                                                    height: 600px;">
-                        <div style="color: white; position: absolute; bottom: 60px; padding-left: 80px;">
-                            <p class="roman" style="font-size: 36px;">{{ facilities_list|first_item_name }}</p>
-                            <p style="width:800px;">{{ facilities_list|first_item_description }}</p>
-                        </div>
-                      </div>
-                </div>
-
-                {% for i in facilities_list|rest_items %}
+        <div id="owl-demo-2" class="owl-carousel owl-theme" style="color: white;">
+              {% for i in facilities_list %}
                     <div class="item">
-                      <div class="my-img-format" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.71) 0%, rgba(38, 25, 42, 0.2) 30%, rgba(0, 0, 0, 0.64) 100%),url('{{ i.image.url }}'),no-repeat;
-                                                        height: 600px;">
-                        <div style="color: white; position: absolute; bottom: 60px; padding-left: 80px;">
-                            <p class="roman" style="font-size: 36px;">{{ i.name }}</p>
-                            <p style="width:800px;">{{ i.description }}</p>
+                    <div class="row">
+                      <div class="my-img-format" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.71) 0%, rgba(38, 25, 42, 0.2) 30%, rgba(0, 0, 0, 0.64) 100%),url('{{ i.image.url }}'), center;
+                                -webkit-background-size: cover;
+                                -moz-background-size: cover;
+                                -o-background-size: cover;
+                                background-size: cover;
+                                height: 600px;">
+                        <div class="facility-body-section" style="">
+                          <div class="col-sm-12">
+                            <p class="roman facility-body-title" style="">{{ i.name }}</p>
+                            <p class="facility-body" style="">{{ i.description }}</p>
                         </div>
+                          </div>
                       </div>
                     </div>
+                    </div>
                 {% endfor %}
-
-              </div>
-            </div>
-        </div>
+           </div>
         <div style="background-color: #f8f8f8; margin-bottom:15px;">
             <div class="row" style="margin-left: 10%; margin-right: 10%; padding-top: 30px">
                 <div class="col-sm-8" style="border-left: solid; border-left-color: #d3bc78;">
@@ -406,6 +405,8 @@
             </div>
         </div>
     </section>
+
+
 
     {# Reviews #}
 {#    <section id="reviews-sec">#}
@@ -521,7 +522,7 @@
             <div class="col-sm-12">
                 <p class="text-center online-reservation">
                     <img class="ornament-text" src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament1.png">
-                    online reservation
+                    <br class="selective-hide-book">online reservation<br class="selective-hide-book">
                     <img class="ornament-text" src="{{ STATIC_URL }}img/Home/Book-Now/GoldOrnament2.png">
                 </p>
                 <p class="text-center book-now-message"><b> If you like this hotel you can make an online reservation in Cubaism.com <br> for more info make a reservation: </b></p>
@@ -730,8 +731,28 @@
           singleItem:true,
           pagination:false,
           navigationText: [
-          "<i class='glyphicon glyphicon-chevron-left icon-white' style='font-size:25px;'></i>",
-          "<i class='glyphicon glyphicon-chevron-right' style='font-size:25px;color:black;'></i>"
+          "<i class='glyphicon glyphicon-chevron-left icon-white' style='font-size:25px;color:#D6BD4D;'></i>",
+          "<i class='glyphicon glyphicon-chevron-right' style='font-size:25px;color:black;color:#D6BD4D;'></i>"
+          ],
+
+          // "singleItem:true" is a shortcut for:
+          // items : 1,
+          // itemsDesktop : false,
+          // itemsDesktopSmall : false,
+          // itemsTablet: false,
+          // itemsMobile : false
+
+      });
+      $("#owl-demo-2").owlCarousel({
+
+          navigation : true, // Show next and prev buttons
+          slideSpeed : 300,
+          paginationSpeed : 400,
+          singleItem:true,
+          pagination:false,
+          navigationText: [
+          "<i class='glyphicon glyphicon-chevron-left icon-white' style='font-size:25px;color:#D6BD4D;'></i>",
+          "<i class='glyphicon glyphicon-chevron-right' style='font-size:25px;color:#D6BD4D;'></i>"
           ],
 
           // "singleItem:true" is a shortcut for:

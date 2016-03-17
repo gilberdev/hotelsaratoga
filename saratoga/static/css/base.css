@@ -161,6 +161,7 @@ nav ul {
     padding: 0 2px 0 2px;
 }
 
+@media (min-width: 1066px) {
 #circle {
     padding: 3px;
     width: 6px;
@@ -168,7 +169,24 @@ nav ul {
     margin-top: 7px;
     border-radius: 25px;
     background-color: #cbb56c;
+    margin-left: 15px; margin-right: 15px;
 }
+}
+@media (max-width: 1065px) {
+#circle {
+    padding: 3px;
+    width: 6px;
+    height: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-radius: 25px;
+    background-color: #cbb56c;
+    margin-left: 48%;
+}
+}
+
+
+
 
 /*******************************************/
 
@@ -181,8 +199,12 @@ nav ul {
 }
 
 .my-page-header{
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.8) 85%, rgba(0, 0, 0, 2) 100%),url('../img/Home/HeaderAndMessage/background.png');
-    background-size: 100% 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.8) 85%, rgba(0, 0, 0, 2) 100%),url('../img/Home/HeaderAndMessage/background.png') center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*background-size: 100% 100%;*/
     height: 600px;
 }
 
@@ -201,14 +223,132 @@ nav ul {
     font-size: 22px;
 }
 
+@media (max-width: 766px) {
+    .selective-hide{
+
+    }
+}
+
+@media (min-width: 767px) {
+    .selective-hide{
+        display: none;
+    }
+}
+
+@media (max-width: 338px) {
+    .selective-hide-news{
+
+    }
+}
+
+@media (min-width: 339px) {
+    .selective-hide-news{
+        display: none;
+    }
+}
+
+@media (max-width: 308px) {
+    .selective-hide-book{
+
+    }
+}
+
+@media (min-width: 309px) {
+    .selective-hide-book{
+        display: none;
+    }
+}
+
+@media (max-width: 943px) {
+    .selective-hide-hotel-ornament{
+
+    }
+}
+
+@media (min-width: 944px) {
+    .selective-hide-hotel-ornament{
+        display: none;
+    }
+}
+
+@media (max-width: 1229px) {
+    .selective-hide-star{
+
+    }
+}
+
+@media (min-width: 1230px) {
+    .selective-hide-star{
+        display: none;
+    }
+}
+
+@media (max-width: 631px) {
+    .selective-hide-facilities{
+
+    }
+
+    .facility-carousel-title-ornament{
+
+    }
+}
+
+@media (min-width: 632px) {
+    .selective-hide-facilities{
+        display: none;
+    }
+
+    .facility-carousel-title-ornament{
+        padding-bottom: 8px;
+    }
+}
+
+@media (max-width: 457px) {
+    .facility-body-section{
+        color: white;
+        position: absolute;
+        bottom: 5px;
+    }
+
+    .facility-body{
+        padding: 0 20px 0 25px;
+    }
+
+    .facility-body-title{
+        padding-left: 20px;
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 458px) {
+    .facility-body-section{
+        color: white;
+        position: absolute;
+        bottom: 60px;
+        padding-left: 80px;
+    }
+
+    .facility-body{
+        padding-right: 30%;
+    }
+
+    .facility-body-title{
+        font-size: 36px;
+    }
+}
+
 /*******************************************/
 
 
 /****************** Intro ******************/
 .intro{
-    background-image: url('../img/Home/Hotel%20Saratoga%20Intro/background.png');
-    background-size: 100% 100%;
-    height: 400px;
+    background: url('../img/Home/Hotel%20Saratoga%20Intro/background.png') center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    /*background-size: 100% 100%;*/
+    height: 500px;
 }
 
 .gallery{
@@ -270,11 +410,51 @@ nav ul {
     border-color: #d3bc78;
 }
 
-.news-page-title-ornamet{
+@media (min-width: 518px){
+    .news-page-hide-br{
+        display: none;
+    }
+    .news-page-title-ornamet{
     width: 150px;
     height: 55px;
     margin-bottom: 21px;
 }
+}
+@media (max-width: 517px){
+    .news-page-hide-br{
+
+    }
+    .news-page-title-ornamet{
+    width: 150px;
+    height: 55px;
+}
+}
+
+@media (min-width: 465px){
+    .news-page-hide-br-rm{
+        display: none;
+    }
+
+    .news-page-read-more-ornament{
+    width: 60px;
+    height: 23px;
+    margin-bottom: 7px;
+}
+
+}
+
+@media (max-width: 464px){
+    .news-page-hide-br-rm{
+
+    }
+
+    .news-page-read-more-ornament{
+    width: 60px;
+    height: 23px;
+}
+
+}
+
 
 .news-row-title{
     margin-bottom: 20px;
@@ -316,9 +496,11 @@ nav ul {
 }
 
 .photo-format{
-    background-size: 100% 100%;
-    width: 100%;
-    height: 300px;
+    /*background-size: 100% 100%;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .photo-format-empty{
@@ -329,12 +511,27 @@ nav ul {
     margin: 0 auto;
 }
 
-.new-left{
-    padding-right: 10px;
+@media(min-width: 768px) {
+    .new-left {
+        padding-right: 10px;
+    }
+
+    .new-right {
+        padding-left: 10px;
+    }
 }
 
-.new-right{
-    padding-left: 10px;
+@media(max-width: 767px) {
+    .new-left {
+        padding-right: 0;
+        padding-left: 0;
+        padding-bottom: 10px;
+    }
+
+    .new-right {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 .row-previous-news{
@@ -412,18 +609,17 @@ nav ul {
     height: 13px;
 }
 
-.news-page-read-more-ornament{
-    width: 60px;
-    height: 23px;
-    margin-bottom: 7px;
-}
 /*******************************************/
 
 
 /**************** History ******************/
 .history{
     /*height: 1000px*/
-    background-image: url('../img/Home/History/background.png');
+    background: url('../img/Home/History/background.png') center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     color: black;
 }
 
@@ -497,7 +693,11 @@ nav ul {
 
 /******************* Rooms *****************/
 .rooms{
-    background-image: url('../img/Home/Rooms/Capitol%20View%20Image.png');
+    background: url('../img/Home/Rooms/Capitol%20View%20Image.png') center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height: 600px;
 
     background-repeat: no-repeat;
@@ -636,11 +836,19 @@ border-radius: 0;
 
 /******************* Book Now **************/
 .booking{
-    background-image: url('../img/Home/Book-Now/background.png');
+    background: url('../img/Home/Book-Now/background.png') center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .booking-alternative{
-    background-image: url('../img/Home/Book-Now/Footer%20+%20Rectangle%2031%20Copy.png');
+    background: url('../img/Home/Book-Now/Footer%20+%20Rectangle%2031%20Copy.png') center top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
 }
 
@@ -709,10 +917,10 @@ border-radius: 0;
 }
 
 /*Phone*/
-@media (max-width: 575px){
+@media (max-width: 575px) {
     .online-reservation{
         font-family: 'TimesNewRomanPSMT' ;
-        line-height: 59px;
+        /*line-height: 59px;*/
         text-transform: uppercase;
         color: white;
         font-size: 18px;
